@@ -38,7 +38,7 @@ export default function DashboardPage() {
         <div>
           <h1 className="text-2xl font-bold tracking-tight">ダッシュボード</h1>
           <p className="text-sm text-muted-foreground">
-            LEDIAN Lounge 原価管理の概要
+            LEDIAN Lounge メニュー運用の全体像
           </p>
         </div>
       </div>

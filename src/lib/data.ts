@@ -1,5 +1,6 @@
 import productsJson from "@/data/products.json"
 import supplierJson from "@/data/supplier_prices.json"
+import salesJson from "@/data/sales_summary.json"
 import type {
   ProductsData,
   SupplierData,
@@ -10,6 +11,29 @@ import type {
 
 const productsData = productsJson as ProductsData
 const supplierData = supplierJson as SupplierData
+
+export type SalesProduct = {
+  product_id: string
+  product_name: string
+  category_name: string
+  total_quantity: number
+  total_sales: number
+  transaction_count: number
+  avg_price: number
+  first_sale: string
+  last_sale: string
+}
+
+export type SalesSummary = {
+  period: { from: string; to: string }
+  fetched_at: string
+  total_transactions: number
+  total_revenue: number
+  total_detail_rows: number
+  products: SalesProduct[]
+}
+
+const salesData = salesJson as SalesSummary
 
 /** All POS products */
 export function getProducts(): Product[] {
@@ -89,6 +113,16 @@ export function getSupplierCategories() {
         items.reduce((sum, i) => sum + i.unit_price, 0) / items.length,
     }))
     .sort((a, b) => b.count - a.count)
+}
+
+/** Sales summary data */
+export function getSalesSummary(): SalesSummary {
+  return salesData
+}
+
+/** Sales products */
+export function getSalesProducts(): SalesProduct[] {
+  return salesData.products
 }
 
 /** Dashboard summary metrics */

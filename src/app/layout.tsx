@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "LEDIAN Lounge - 原価管理",
-  description: "LEDIAN Lounge メニュー原価管理システム",
+  title: "LEDIAN Lounge - メニューマネージャー",
+  description: "LEDIAN Lounge メニュー運用・原価・売上管理",
 }
 
 export default function RootLayout({

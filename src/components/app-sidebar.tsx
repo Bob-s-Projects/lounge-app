@@ -8,6 +8,9 @@ import {
   Receipt,
   UtensilsCrossed,
   TrendingUp,
+  BookOpen,
+  IceCream,
+  BarChart3,
 } from "lucide-react"
 
 import {
@@ -21,14 +24,20 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  SidebarSeparator,
 } from "@/components/ui/sidebar"
 
-const navItems = [
-  { title: "ダッシュボード", href: "/", icon: LayoutDashboard },
-  { title: "商品一覧", href: "/products", icon: Package },
-  { title: "仕入れ価格", href: "/suppliers", icon: Receipt },
-  { title: "メニュー管理", href: "/menu", icon: UtensilsCrossed },
+const menuNav = [
+  { title: "グランドメニュー", href: "/grand-menu", icon: BookOpen },
+  { title: "季節メニュー", href: "/seasonal", icon: IceCream },
+  { title: "商品マスタ", href: "/products", icon: Package },
+]
+
+const analysisNav = [
+  { title: "売上分析", href: "/sales", icon: BarChart3 },
   { title: "原価分析", href: "/analysis", icon: TrendingUp },
+  { title: "改廃アドバイス", href: "/menu", icon: UtensilsCrossed },
+  { title: "仕入れ価格", href: "/suppliers", icon: Receipt },
 ]
 
 export function AppSidebar() {
@@ -41,34 +50,66 @@ export function AppSidebar() {
           <span className="text-base font-semibold tracking-tight">
             LEDIAN Lounge
           </span>
-          <span className="text-xs text-muted-foreground">原価管理システム</span>
+          <span className="text-xs text-muted-foreground">メニューマネージャー</span>
         </div>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>メニュー</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {navItems.map((item) => {
-                const isActive =
-                  item.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(item.href)
-
-                return (
-                  <SidebarMenuItem key={item.href}>
-                    <SidebarMenuButton
-                      isActive={isActive}
-                      tooltip={item.title}
-                    >
-                      <Link href={item.href} className="flex items-center gap-2 w-full">
-                        <item.icon className="size-4" />
-                        <span>{item.title}</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                )
-              })}
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  isActive={pathname === "/"}
+                  tooltip="ダッシュボード"
+                >
+                  <Link href="/" className="flex items-center gap-2 w-full">
+                    <LayoutDashboard className="size-4" />
+                    <span>ダッシュボード</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarSeparator />
+        <SidebarGroup>
+          <SidebarGroupLabel>メニュー運用</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {menuNav.map((item) => (
+                <SidebarMenuItem key={item.href}>
+                  <SidebarMenuButton
+                    isActive={pathname.startsWith(item.href)}
+                    tooltip={item.title}
+                  >
+                    <Link href={item.href} className="flex items-center gap-2 w-full">
+                      <item.icon className="size-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarSeparator />
+        <SidebarGroup>
+          <SidebarGroupLabel>分析・コスト</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {analysisNav.map((item) => (
+                <SidebarMenuItem key={item.href}>
+                  <SidebarMenuButton
+                    isActive={pathname.startsWith(item.href)}
+                    tooltip={item.title}
+                  >
+                    <Link href={item.href} className="flex items-center gap-2 w-full">
+                      <item.icon className="size-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
