@@ -1,0 +1,2422 @@
+{
+  "source": "納品価格一覧（747567レディアンラウンジ様）",
+  "date": "2026-03-04",
+  "customer_code": "000747567",
+  "customer_name": "恵比寿南 LEDIAN Lounge",
+  "note": "納入価格は外税中身売り価格",
+  "categories": [
+    {
+      "code": "0102",
+      "name": "焼酎 甲類 25%"
+    },
+    {
+      "code": "0105",
+      "name": "焼酎 乙類 麦"
+    },
+    {
+      "code": "0108",
+      "name": "焼酎 乙類 芋"
+    },
+    {
+      "code": "0112",
+      "name": "焼酎 甲乙混合"
+    },
+    {
+      "code": "0403",
+      "name": "業務用 樽生ビール"
+    },
+    {
+      "code": "0404",
+      "name": "輸入ビール・海外ブランドビール"
+    },
+    {
+      "code": "0504",
+      "name": "フランスワイン 赤"
+    },
+    {
+      "code": "0505",
+      "name": "フランスワイン 白"
+    },
+    {
+      "code": "0516",
+      "name": "アメリカワイン 赤"
+    },
+    {
+      "code": "0517",
+      "name": "アメリカワイン 白"
+    },
+    {
+      "code": "0520",
+      "name": "チリワイン 白"
+    },
+    {
+      "code": "0525",
+      "name": "オーストラリアワイン 赤"
+    },
+    {
+      "code": "0603",
+      "name": "シャンパン"
+    },
+    {
+      "code": "0607",
+      "name": "スプマンテ"
+    },
+    {
+      "code": "0608",
+      "name": "輸入スパークリング"
+    },
+    {
+      "code": "0701",
+      "name": "国産ウィスキー"
+    },
+    {
+      "code": "0702",
+      "name": "ブレンデッドスコッチ"
+    },
+    {
+      "code": "0703",
+      "name": "モルトスコッチ"
+    },
+    {
+      "code": "0704",
+      "name": "アイリッシュウィスキー"
+    },
+    {
+      "code": "0705",
+      "name": "バーボンウィスキー"
+    },
+    {
+      "code": "0706",
+      "name": "カナディアンウィスキー"
+    },
+    {
+      "code": "0802",
+      "name": "コニャックブランデー"
+    },
+    {
+      "code": "0902",
+      "name": "ジン"
+    },
+    {
+      "code": "0903",
+      "name": "ウオツカ"
+    },
+    {
+      "code": "0904",
+      "name": "ラム"
+    },
+    {
+      "code": "0905",
+      "name": "テキーラ"
+    },
+    {
+      "code": "1001",
+      "name": "国産リキュール"
+    },
+    {
+      "code": "1003",
+      "name": "梅酒"
+    },
+    {
+      "code": "1004",
+      "name": "輸入リキュール"
+    },
+    {
+      "code": "1006",
+      "name": "チューハイ・RTD"
+    },
+    {
+      "code": "1105",
+      "name": "ビールテイスト飲料(年齢確認品)"
+    },
+    {
+      "code": "1200",
+      "name": "珈琲 紅茶類"
+    },
+    {
+      "code": "1201",
+      "name": "ミネラル類"
+    },
+    {
+      "code": "1202",
+      "name": "烏龍茶 緑茶類"
+    },
+    {
+      "code": "1203",
+      "name": "ジュース類"
+    },
+    {
+      "code": "1206",
+      "name": "コンク類"
+    },
+    {
+      "code": "1207",
+      "name": "機能性飲料類"
+    },
+    {
+      "code": "1208",
+      "name": "調味料類"
+    },
+    {
+      "code": "1301",
+      "name": "その他"
+    }
+  ],
+  "items": [
+    {
+      "supplier_code": "00065616",
+      "product_name": "甲 亀甲宮 金宮25°(緑) 1.8Lパック(三重)",
+      "category_code": "0102",
+      "category_name": "焼酎 甲類 25%",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 1190,
+      "unit_price": 198,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00236900",
+      "product_name": "甲 Kprice 甲焼酎ペット 25°(青)4L",
+      "category_code": "0102",
+      "category_name": "焼酎 甲類 25%",
+      "spec": "4L",
+      "case_quantity": 4,
+      "wholesale_price": 1734,
+      "unit_price": 434,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00000819",
+      "product_name": "乙 二階堂 吉四六 壺 麦25°(大分)",
+      "category_code": "0105",
+      "category_name": "焼酎 乙類 麦",
+      "spec": "720ML",
+      "case_quantity": 10,
+      "wholesale_price": 2230,
+      "unit_price": 223,
+      "last_shipped": "2026/01/31"
+    },
+    {
+      "supplier_code": "00001561",
+      "product_name": "乙 二階堂 吉四六 びん 麦25°(大分)",
+      "category_code": "0105",
+      "category_name": "焼酎 乙類 麦",
+      "spec": "720ML",
+      "case_quantity": 10,
+      "wholesale_price": 2005,
+      "unit_price": 200,
+      "last_shipped": "2026/03/01"
+    },
+    {
+      "supplier_code": "00037236",
+      "product_name": "乙 千年の眠り 長期貯蔵麦40°(福岡)",
+      "category_code": "0105",
+      "category_name": "焼酎 乙類 麦",
+      "spec": "720ML",
+      "case_quantity": 6,
+      "wholesale_price": 2866,
+      "unit_price": 478,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00214163",
+      "product_name": "乙 Kprice 本格麦焼酎パック 25°(鹿児島)",
+      "category_code": "0105",
+      "category_name": "焼酎 乙類 麦",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 1180,
+      "unit_price": 197,
+      "last_shipped": "2025/05/04"
+    },
+    {
+      "supplier_code": "00303241",
+      "product_name": "乙 濱田 だいやめ 芋25°(鹿児島)",
+      "category_code": "0108",
+      "category_name": "焼酎 乙類 芋",
+      "spec": "720ML",
+      "case_quantity": 6,
+      "wholesale_price": 1076,
+      "unit_price": 179,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00309005",
+      "product_name": "乙 濱田 だいやめ 芋25°(鹿児島)",
+      "category_code": "0108",
+      "category_name": "焼酎 乙類 芋",
+      "spec": "900ML",
+      "case_quantity": 6,
+      "wholesale_price": 1280,
+      "unit_price": 213,
+      "last_shipped": "2025/12/13"
+    },
+    {
+      "supplier_code": "00309006",
+      "product_name": "乙 濱田 だいやめ 芋25°(鹿児島)",
+      "category_code": "0108",
+      "category_name": "焼酎 乙類 芋",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 2140,
+      "unit_price": 357,
+      "last_shipped": "2026/01/31"
+    },
+    {
+      "supplier_code": "00403289",
+      "product_name": "甲乙混和 ジャスミン茉莉花20° 紙パック",
+      "category_code": "0112",
+      "category_name": "焼酎 甲乙混合",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 1880,
+      "unit_price": 313,
+      "last_shipped": "2026/01/31"
+    },
+    {
+      "supplier_code": "00000927",
+      "product_name": "サッポロ黒ラベル 生樽10L",
+      "category_code": "0403",
+      "category_name": "業務用 樽生ビール",
+      "spec": "10L",
+      "case_quantity": 1,
+      "wholesale_price": 5450,
+      "unit_price": 5450,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00002850",
+      "product_name": "アサヒスーパードライ 生樽 10L",
+      "category_code": "0403",
+      "category_name": "業務用 樽生ビール",
+      "spec": "10L",
+      "case_quantity": 1,
+      "wholesale_price": 5450,
+      "unit_price": 5450,
+      "last_shipped": "2026/03/02"
+    },
+    {
+      "supplier_code": "00002862",
+      "product_name": "アサヒスーパードライ 生樽 19L",
+      "category_code": "0403",
+      "category_name": "業務用 樽生ビール",
+      "spec": "19L",
+      "case_quantity": 1,
+      "wholesale_price": 10355,
+      "unit_price": 10355,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00401113",
+      "product_name": "ハイネケン ロングネック 瓶(ワンウェイ)",
+      "category_code": "0404",
+      "category_name": "輸入ビール・海外ブランドビール",
+      "spec": "330ML",
+      "case_quantity": 24,
+      "wholesale_price": 262,
+      "unit_price": 11,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00415009",
+      "product_name": "ジュヴレ シャンベルタン 22／ルイ ラトゥール",
+      "category_code": "0504",
+      "category_name": "フランスワイン 赤",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 9750,
+      "unit_price": 812,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00415011",
+      "product_name": "シャンボール ミュジニー 22／ルイ ラトゥール",
+      "category_code": "0504",
+      "category_name": "フランスワイン 赤",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 12750,
+      "unit_price": 1062,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00056272",
+      "product_name": "CH リューセック 16 白",
+      "category_code": "0505",
+      "category_name": "フランスワイン 白",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 7200,
+      "unit_price": 600,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00040881",
+      "product_name": "カルロ ロッシ レッド 3L ボックス 赤",
+      "category_code": "0516",
+      "category_name": "アメリカワイン 赤",
+      "spec": "3L",
+      "case_quantity": 4,
+      "wholesale_price": 2300,
+      "unit_price": 575,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00293302",
+      "product_name": "ブレッド&バター ピノ ノワール 23※／ブレッド&バター ワイ",
+      "category_code": "0516",
+      "category_name": "アメリカワイン 赤",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 2740,
+      "unit_price": 228,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00013601",
+      "product_name": "カルロ ロッシ ホワイト(業務用)瓶 # 白",
+      "category_code": "0517",
+      "category_name": "アメリカワイン 白",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 720,
+      "unit_price": 60,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00040882",
+      "product_name": "カルロ ロッシ ホワイト 3L ボックス 白",
+      "category_code": "0517",
+      "category_name": "アメリカワイン 白",
+      "spec": "3L",
+      "case_quantity": 4,
+      "wholesale_price": 2300,
+      "unit_price": 575,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00289219",
+      "product_name": "ブレッド＆バター シャルドネ 24※／ブレッド&バター ワイ",
+      "category_code": "0517",
+      "category_name": "アメリカワイン 白",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 2740,
+      "unit_price": 228,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00362858",
+      "product_name": "コンセンティア シャルドネ ソーヴィニヨン ブラン 24※/ウント",
+      "category_code": "0520",
+      "category_name": "チリワイン 白",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 740,
+      "unit_price": 62,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00218823",
+      "product_name": "ロリマー シラーズ カベルネ 21※22※23／デ ボルトリバ・",
+      "category_code": "0525",
+      "category_name": "オーストラリアワイン 赤",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 690,
+      "unit_price": 58,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00045789",
+      "product_name": "モエ エ シャンドン モエ アンペリアル 白泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 5561,
+      "unit_price": 927,
+      "last_shipped": "2025/12/25"
+    },
+    {
+      "supplier_code": "00045792",
+      "product_name": "モエ エ シャンドン ロゼ アンペリアル NV 箱無し 泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 6622,
+      "unit_price": 1104,
+      "last_shipped": "2025/04/27"
+    },
+    {
+      "supplier_code": "00060874",
+      "product_name": "モエ エ シャンドン ネクター アンペリアル 白泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 7098,
+      "unit_price": 1183,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00072432",
+      "product_name": "ローラン ペリエ ウルトラ ブリュット NV 白泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 15146,
+      "unit_price": 2524,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00075329",
+      "product_name": "クリュッグ グラン ド キュヴェ NV(MHD) 白泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 30366,
+      "unit_price": 5061,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00093944",
+      "product_name": "ヴーヴ クリコ ポンサルダン イエローラベル(MHD)箱無・",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 6476,
+      "unit_price": 1079,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00271328",
+      "product_name": "ペリエ ジュエ キュヴェ ベル エポック ブラン15※16 白泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 23021,
+      "unit_price": 3837,
+      "last_shipped": "2025/08/22"
+    },
+    {
+      "supplier_code": "00273288",
+      "product_name": "モエ エ シャンドン アイス アンペリアル 白泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 7354,
+      "unit_price": 1226,
+      "last_shipped": "2026/01/23"
+    },
+    {
+      "supplier_code": "00278813",
+      "product_name": "モエ エ シャンドン モエ ネクター アンペリアル ロゼ 泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 7610,
+      "unit_price": 1268,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00347777",
+      "product_name": "ルイ ロデレール クリスタル ブリュット 15※16 白泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 38049,
+      "unit_price": 6342,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00362248",
+      "product_name": "アルマンド ブリニャック ブリュット ゴールド(MHD) 白泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 40390,
+      "unit_price": 6732,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00365193",
+      "product_name": "ルイ モレット ブリュット 白泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 4390,
+      "unit_price": 732,
+      "last_shipped": "2025/12/11"
+    },
+    {
+      "supplier_code": "00365194",
+      "product_name": "ルイ モレット ロゼ 泡",
+      "category_code": "0603",
+      "category_name": "シャンパン",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 4980,
+      "unit_price": 830,
+      "last_shipped": "2025/12/11"
+    },
+    {
+      "supplier_code": "00233227",
+      "product_name": "ボッテガ ゴールド NV 白泡",
+      "category_code": "0607",
+      "category_name": "スプマンテ",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 2660,
+      "unit_price": 443,
+      "last_shipped": "2026/01/04"
+    },
+    {
+      "supplier_code": "00233228",
+      "product_name": "ボッテガ ロゼゴールド NV 泡",
+      "category_code": "0607",
+      "category_name": "スプマンテ",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 2562,
+      "unit_price": 427,
+      "last_shipped": "2025/08/22"
+    },
+    {
+      "supplier_code": "00236992",
+      "product_name": "プロセッコ スプマンテ NV／トゥレゼッテ 白泡",
+      "category_code": "0607",
+      "category_name": "スプマンテ",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 1580,
+      "unit_price": 263,
+      "last_shipped": "2025/12/18"
+    },
+    {
+      "supplier_code": "00072525",
+      "product_name": "カフェド パリ グリーンアップル (PR)",
+      "category_code": "0608",
+      "category_name": "輸入スパークリング",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 1640,
+      "unit_price": 273,
+      "last_shipped": "2026/01/04"
+    },
+    {
+      "supplier_code": "00072527",
+      "product_name": "カフェド パリ ピーチ (PR)",
+      "category_code": "0608",
+      "category_name": "輸入スパークリング",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 1640,
+      "unit_price": 273,
+      "last_shipped": "2026/01/04"
+    },
+    {
+      "supplier_code": "00204150",
+      "product_name": "カフェド パリ マスカット (PR)",
+      "category_code": "0608",
+      "category_name": "輸入スパークリング",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 1640,
+      "unit_price": 273,
+      "last_shipped": "2026/01/04"
+    },
+    {
+      "supplier_code": "00305398",
+      "product_name": "アンジュエール ブリュット ノワール H 白泡",
+      "category_code": "0608",
+      "category_name": "輸入スパークリング",
+      "spec": "375ML",
+      "case_quantity": 12,
+      "wholesale_price": 530,
+      "unit_price": 44,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00015166",
+      "product_name": "サントリー 白州 12年",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 15000,
+      "unit_price": 1250,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00043287",
+      "product_name": "サントリー 白州 18年",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 55000,
+      "unit_price": 9167,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00046867",
+      "product_name": "サントリー 山崎 12年",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 15000,
+      "unit_price": 1250,
+      "last_shipped": "2025/06/14"
+    },
+    {
+      "supplier_code": "00046944",
+      "product_name": "サントリー 山崎 18年",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 55000,
+      "unit_price": 9167,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00049078",
+      "product_name": "サントリー 角瓶 40° 2.7Lペット(黄)",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "2.7L",
+      "case_quantity": 6,
+      "wholesale_price": 5800,
+      "unit_price": 967,
+      "last_shipped": "2025/12/19"
+    },
+    {
+      "supplier_code": "00049209",
+      "product_name": "サントリー 響 21年",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 55000,
+      "unit_price": 9167,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00218443",
+      "product_name": "サントリー シングルモルトウイスキー 山崎 43°",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 7000,
+      "unit_price": 583,
+      "last_shipped": "2026/03/03"
+    },
+    {
+      "supplier_code": "00218444",
+      "product_name": "サントリー シングルモルトウイスキー 白州 43°",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 7000,
+      "unit_price": 583,
+      "last_shipped": "2026/03/03"
+    },
+    {
+      "supplier_code": "00274231",
+      "product_name": "サントリー ウイスキー 知多",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 5270,
+      "unit_price": 439,
+      "last_shipped": "2026/03/01"
+    },
+    {
+      "supplier_code": "00291732",
+      "product_name": "サントリーウイスキー トリスクラシック",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 2100,
+      "unit_price": 350,
+      "last_shipped": "2025/12/30"
+    },
+    {
+      "supplier_code": "00306506",
+      "product_name": "サントリー 響 BLENDER'S CHOICE",
+      "category_code": "0701",
+      "category_name": "国産ウィスキー",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 15000,
+      "unit_price": 1250,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00237600",
+      "product_name": "シーバスリーガル ミズナラ 12年",
+      "category_code": "0702",
+      "category_name": "ブレンデッドスコッチ",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 3870,
+      "unit_price": 322,
+      "last_shipped": "2025/12/25"
+    },
+    {
+      "supplier_code": "00003766",
+      "product_name": "ラフロイグ 10年",
+      "category_code": "0703",
+      "category_name": "モルトスコッチ",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 6118,
+      "unit_price": 510,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00034978",
+      "product_name": "ザ・マッカラン 12年",
+      "category_code": "0703",
+      "category_name": "モルトスコッチ",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 11350,
+      "unit_price": 946,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00062833",
+      "product_name": "グレンフィディック12年 スペシャルリザーブ",
+      "category_code": "0703",
+      "category_name": "モルトスコッチ",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 5750,
+      "unit_price": 479,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00078033",
+      "product_name": "タリスカー 10年",
+      "category_code": "0703",
+      "category_name": "モルトスコッチ",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 5000,
+      "unit_price": 833,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00078035",
+      "product_name": "ラガヴーリン 16年",
+      "category_code": "0703",
+      "category_name": "モルトスコッチ",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 10246,
+      "unit_price": 1708,
+      "last_shipped": "2025/05/19"
+    },
+    {
+      "supplier_code": "00293620",
+      "product_name": "ザ マッカラン ダブルカスク 12年",
+      "category_code": "0703",
+      "category_name": "モルトスコッチ",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 8325,
+      "unit_price": 694,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00319040",
+      "product_name": "グレンフィディック12年 スペシャルリザーブ",
+      "category_code": "0703",
+      "category_name": "モルトスコッチ",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 3980,
+      "unit_price": 332,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00279419",
+      "product_name": "ブッシュミルズ 40° 700ml (アサヒ)",
+      "category_code": "0704",
+      "category_name": "アイリッシュウィスキー",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 1750,
+      "unit_price": 292,
+      "last_shipped": "2026/03/01"
+    },
+    {
+      "supplier_code": "00230332",
+      "product_name": "ウッドフォード リザーブ 43° 750ml#",
+      "category_code": "0705",
+      "category_name": "バーボンウィスキー",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 3771,
+      "unit_price": 628,
+      "last_shipped": "2025/07/26"
+    },
+    {
+      "supplier_code": "00000446",
+      "product_name": "カナディアンクラブ 40°",
+      "category_code": "0706",
+      "category_name": "カナディアンウィスキー",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 1380,
+      "unit_price": 115,
+      "last_shipped": "2025/12/19"
+    },
+    {
+      "supplier_code": "00337042",
+      "product_name": "カミュ ボルドリー XO",
+      "category_code": "0802",
+      "category_name": "コニャックブランデー",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 18658,
+      "unit_price": 3110,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00002249",
+      "product_name": "サントリー ドライジン エクストラ 40% ペット",
+      "category_code": "0902",
+      "category_name": "ジン",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 1800,
+      "unit_price": 300,
+      "last_shipped": "2025/11/14"
+    },
+    {
+      "supplier_code": "00005635",
+      "product_name": "ビーフィーター ジン 40°",
+      "category_code": "0902",
+      "category_name": "ジン",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 1060,
+      "unit_price": 88,
+      "last_shipped": "2026/03/01"
+    },
+    {
+      "supplier_code": "00009949",
+      "product_name": "サントリー ウオツカ 80プルーフ 40% ペット",
+      "category_code": "0903",
+      "category_name": "ウオツカ",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 1800,
+      "unit_price": 300,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00036608",
+      "product_name": "ベルヴェデール ウオツカ 40°(MHD)",
+      "category_code": "0903",
+      "category_name": "ウオツカ",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 3585,
+      "unit_price": 598,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00067656",
+      "product_name": "アブソルヴェント ウォッカ",
+      "category_code": "0903",
+      "category_name": "ウオツカ",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 900,
+      "unit_price": 75,
+      "last_shipped": "2026/03/01"
+    },
+    {
+      "supplier_code": "00000578",
+      "product_name": "サントリー ラム ホワイト",
+      "category_code": "0904",
+      "category_name": "ラム",
+      "spec": "720ML",
+      "case_quantity": 12,
+      "wholesale_price": 920,
+      "unit_price": 77,
+      "last_shipped": "2025/07/12"
+    },
+    {
+      "supplier_code": "00215671",
+      "product_name": "バカルディ ラム スペリオール(ホワイト)",
+      "category_code": "0904",
+      "category_name": "ラム",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 1520,
+      "unit_price": 127,
+      "last_shipped": "2025/08/22"
+    },
+    {
+      "supplier_code": "00297036",
+      "product_name": "ハバナ クラブ 7年",
+      "category_code": "0904",
+      "category_name": "ラム",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 2585,
+      "unit_price": 431,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00002708",
+      "product_name": "サウザ テキーラ ゴールド",
+      "category_code": "0905",
+      "category_name": "テキーラ",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 1650,
+      "unit_price": 138,
+      "last_shipped": "2025/11/16"
+    },
+    {
+      "supplier_code": "00025777",
+      "product_name": "クエルボ 1800 テキーラ アネホ 40°",
+      "category_code": "0905",
+      "category_name": "テキーラ",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 8240,
+      "unit_price": 1373,
+      "last_shipped": "2026/03/01"
+    },
+    {
+      "supplier_code": "00043660",
+      "product_name": "クエルボ 1800 テキーラ レポサド 40°",
+      "category_code": "0905",
+      "category_name": "テキーラ",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 4024,
+      "unit_price": 335,
+      "last_shipped": "2026/01/04"
+    },
+    {
+      "supplier_code": "00075101",
+      "product_name": "ドン フリオ テキーラ アネホ 38%",
+      "category_code": "0905",
+      "category_name": "テキーラ",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 9300,
+      "unit_price": 1550,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00215693",
+      "product_name": "パトロン アニェホ テキーラ 40°",
+      "category_code": "0905",
+      "category_name": "テキーラ",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 8240,
+      "unit_price": 687,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00020421",
+      "product_name": "ドーバー ティー 紅茶リキュール",
+      "category_code": "1001",
+      "category_name": "国産リキュール",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 1350,
+      "unit_price": 225,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00023870",
+      "product_name": "サントリー カクテル バイオレットフィズ",
+      "category_code": "1001",
+      "category_name": "国産リキュール",
+      "spec": "600ML",
+      "case_quantity": 12,
+      "wholesale_price": 783,
+      "unit_price": 65,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00044632",
+      "product_name": "アサヒ フォション ティーリキュール 500ML",
+      "category_code": "1001",
+      "category_name": "国産リキュール",
+      "spec": "500ML",
+      "case_quantity": 12,
+      "wholesale_price": 1582,
+      "unit_price": 132,
+      "last_shipped": "2025/12/13"
+    },
+    {
+      "supplier_code": "00332831",
+      "product_name": "こだわり酒場のレモンサワーの素コンク（業務用）",
+      "category_code": "1001",
+      "category_name": "国産リキュール",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 2560,
+      "unit_price": 427,
+      "last_shipped": "2026/01/20"
+    },
+    {
+      "supplier_code": "00345144",
+      "product_name": "HABUSH（ハブ酒）",
+      "category_code": "1001",
+      "category_name": "国産リキュール",
+      "spec": "500ML",
+      "case_quantity": 12,
+      "wholesale_price": 3815,
+      "unit_price": 318,
+      "last_shipped": "2026/01/27"
+    },
+    {
+      "supplier_code": "00349929",
+      "product_name": "サントリープロカクテル＜カシス＞1.8L ペット",
+      "category_code": "1001",
+      "category_name": "国産リキュール",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 1500,
+      "unit_price": 250,
+      "last_shipped": "2025/12/28"
+    },
+    {
+      "supplier_code": "00349930",
+      "product_name": "サントリープロカクテル＜ピーチ＞1.8L ペット",
+      "category_code": "1001",
+      "category_name": "国産リキュール",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 1500,
+      "unit_price": 250,
+      "last_shipped": "2025/12/28"
+    },
+    {
+      "supplier_code": "00352247",
+      "product_name": "アサヒ 樽ハイ倶楽部レモンサワーの素 ペット",
+      "category_code": "1001",
+      "category_name": "国産リキュール",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 2607,
+      "unit_price": 434,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00443990",
+      "product_name": "カクマス レモンサワーの素 業務用40° 1.8L ペ",
+      "category_code": "1001",
+      "category_name": "国産リキュール",
+      "spec": "1.8L",
+      "case_quantity": 8,
+      "wholesale_price": 2200,
+      "unit_price": 275,
+      "last_shipped": "2026/03/02"
+    },
+    {
+      "supplier_code": "00034685",
+      "product_name": "萬歳楽 加賀梅酒(石川)",
+      "category_code": "1003",
+      "category_name": "梅酒",
+      "spec": "1.8L",
+      "case_quantity": 6,
+      "wholesale_price": 3373,
+      "unit_price": 562,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00035483",
+      "product_name": "萬歳楽 加賀梅酒(石川)",
+      "category_code": "1003",
+      "category_name": "梅酒",
+      "spec": "720ML",
+      "case_quantity": 12,
+      "wholesale_price": 1468,
+      "unit_price": 122,
+      "last_shipped": "2026/01/15"
+    },
+    {
+      "supplier_code": "00216910",
+      "product_name": "おおやま夢工房 熟成梅酒 ゆめひびき 箱入",
+      "category_code": "1003",
+      "category_name": "梅酒",
+      "spec": "720ML",
+      "case_quantity": 12,
+      "wholesale_price": 1550,
+      "unit_price": 129,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00307038",
+      "product_name": "おおやま 樽仕込み高級梅酒ゆめひびき500カ",
+      "category_code": "1003",
+      "category_name": "梅酒",
+      "spec": "500ML",
+      "case_quantity": 12,
+      "wholesale_price": 3410,
+      "unit_price": 284,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00001636",
+      "product_name": "ルジェ クレーム ド カシス",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 1600,
+      "unit_price": 133,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00002710",
+      "product_name": "ディサローノ アマレット",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 2439,
+      "unit_price": 203,
+      "last_shipped": "2026/03/01"
+    },
+    {
+      "supplier_code": "00003193",
+      "product_name": "ルジェ クレーム ド ピーチ",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 1400,
+      "unit_price": 117,
+      "last_shipped": "2026/03/02"
+    },
+    {
+      "supplier_code": "00003985",
+      "product_name": "ディタ(ライチ)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 2350,
+      "unit_price": 196,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00004242",
+      "product_name": "フィリップ ド ブルゴーニュ クレーム ド カシス",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 3161,
+      "unit_price": 527,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00023839",
+      "product_name": "マリブ(ココナッツ)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 1233,
+      "unit_price": 103,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00031774",
+      "product_name": "ボルス パルフェタムール",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 1463,
+      "unit_price": 244,
+      "last_shipped": "2026/01/27"
+    },
+    {
+      "supplier_code": "00031777",
+      "product_name": "ボルス ライチ",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 1463,
+      "unit_price": 244,
+      "last_shipped": "2026/03/02"
+    },
+    {
+      "supplier_code": "00031788",
+      "product_name": "ボルス ピーチ",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 1463,
+      "unit_price": 244,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00031794",
+      "product_name": "ボルス ブルー",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 1463,
+      "unit_price": 244,
+      "last_shipped": "2025/12/25"
+    },
+    {
+      "supplier_code": "00032008",
+      "product_name": "ティフィン ティー リキュール",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 2650,
+      "unit_price": 442,
+      "last_shipped": "2025/12/09"
+    },
+    {
+      "supplier_code": "00032057",
+      "product_name": "カルーア コーヒーリキュール 20°",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 12,
+      "wholesale_price": 1245,
+      "unit_price": 104,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00205361",
+      "product_name": "マスカットリキュール ド フランス ミスティア",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 2171,
+      "unit_price": 362,
+      "last_shipped": "2026/03/01"
+    },
+    {
+      "supplier_code": "00271822",
+      "product_name": "真露 チャミスル オリジナル 20.1°",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "360ML",
+      "case_quantity": 20,
+      "wholesale_price": 309,
+      "unit_price": 15,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00273660",
+      "product_name": "コカレロ",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 4373,
+      "unit_price": 729,
+      "last_shipped": "2025/11/27"
+    },
+    {
+      "supplier_code": "00294608",
+      "product_name": "真露 チャミスル グレープフルーツ(韓国)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "360ML",
+      "case_quantity": 20,
+      "wholesale_price": 298,
+      "unit_price": 15,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00294827",
+      "product_name": "真露 チャミスル マスカット(韓国)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "360ML",
+      "case_quantity": 20,
+      "wholesale_price": 298,
+      "unit_price": 15,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00301974",
+      "product_name": "真露 チャミスル フレッシュ 16°(韓国)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "360ML",
+      "case_quantity": 20,
+      "wholesale_price": 298,
+      "unit_price": 15,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00333240",
+      "product_name": "真露 チャミスル すもも(韓国)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "360ML",
+      "case_quantity": 20,
+      "wholesale_price": 298,
+      "unit_price": 15,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00346341",
+      "product_name": "真露 チャミスル ストロベリー(韓国)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "360ML",
+      "case_quantity": 20,
+      "wholesale_price": 298,
+      "unit_price": 15,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00361201",
+      "product_name": "真露 チャミスル トクトクマスカット5°(韓国)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "275ML",
+      "case_quantity": 24,
+      "wholesale_price": 208,
+      "unit_price": 9,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00361202",
+      "product_name": "真露 チャミスル トクトクすもも5°(韓国)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "275ML",
+      "case_quantity": 24,
+      "wholesale_price": 208,
+      "unit_price": 9,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00363411",
+      "product_name": "真露 チャミスル ピーチ(韓国)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "360ML",
+      "case_quantity": 20,
+      "wholesale_price": 298,
+      "unit_price": 15,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00416096",
+      "product_name": "真露 チャミスル レモン(韓国)",
+      "category_code": "1004",
+      "category_name": "輸入リキュール",
+      "spec": "360ML",
+      "case_quantity": 20,
+      "wholesale_price": 298,
+      "unit_price": 15,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00440356",
+      "product_name": "ジムビーム ハイボール 500 瓶",
+      "category_code": "1006",
+      "category_name": "チューハイ・RTD",
+      "spec": "500ML",
+      "case_quantity": 12,
+      "wholesale_price": 330,
+      "unit_price": 28,
+      "last_shipped": "2025/10/30"
+    },
+    {
+      "supplier_code": "00200999",
+      "product_name": "NAJサントリー オールフリー 瓶",
+      "category_code": "1105",
+      "category_name": "ビールテイスト飲料(年齢確認品)",
+      "spec": "334ML",
+      "case_quantity": 30,
+      "wholesale_price": 155,
+      "unit_price": 5,
+      "last_shipped": "2025/11/16"
+    },
+    {
+      "supplier_code": "00221226",
+      "product_name": "NAJアサヒ ドライゼロ 小瓶",
+      "category_code": "1105",
+      "category_name": "ビールテイスト飲料(年齢確認品)",
+      "spec": "334ML",
+      "case_quantity": 30,
+      "wholesale_price": 155,
+      "unit_price": 5,
+      "last_shipped": "2025/11/16"
+    },
+    {
+      "supplier_code": "00075245",
+      "product_name": "東京BIB G・Pディープロースト 1ガロン(コカコーラ直送片",
+      "category_code": "1200",
+      "category_name": "珈琲 紅茶類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 9000,
+      "unit_price": 9000,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00093764",
+      "product_name": "東京PXT 紅茶花伝アールグレイティBIB(コカコ",
+      "category_code": "1200",
+      "category_name": "珈琲 紅茶類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 11000,
+      "unit_price": 11000,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00217373",
+      "product_name": "東京 PXT 紅茶花伝ティーBIB(コカコーラ直送用)",
+      "category_code": "1200",
+      "category_name": "珈琲 紅茶類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 7100,
+      "unit_price": 7100,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00282453",
+      "product_name": "東京PXT 紅茶花伝セイロンティーBIB(コカコーラ直送片",
+      "category_code": "1200",
+      "category_name": "珈琲 紅茶類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 11000,
+      "unit_price": 11000,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00285025",
+      "product_name": "ジョージアカフェ ボトルコーヒー 贅沢ブラック 無糖 ペット",
+      "category_code": "1200",
+      "category_name": "珈琲 紅茶類",
+      "spec": "950ML",
+      "case_quantity": 12,
+      "wholesale_price": 190,
+      "unit_price": 16,
+      "last_shipped": "2025/09/13"
+    },
+    {
+      "supplier_code": "00411660",
+      "product_name": "Kprice 無糖紅茶 2L ペット",
+      "category_code": "1200",
+      "category_name": "珈琲 紅茶類",
+      "spec": "2L",
+      "case_quantity": 6,
+      "wholesale_price": 168,
+      "unit_price": 28,
+      "last_shipped": "2026/01/31"
+    },
+    {
+      "supplier_code": "00047006",
+      "product_name": "ヒルドン スティル(無発泡)ミネラルウォーター 瓶#",
+      "category_code": "1201",
+      "category_name": "ミネラル類",
+      "spec": "330ML",
+      "case_quantity": 24,
+      "wholesale_price": 420,
+      "unit_price": 18,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00068420",
+      "product_name": "ヒルドン(発泡)ミネラルウォーター 瓶",
+      "category_code": "1201",
+      "category_name": "ミネラル類",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 700,
+      "unit_price": 58,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00201265",
+      "product_name": "ヒルドン スティル(無発泡)ミネラルウォーター 瓶",
+      "category_code": "1201",
+      "category_name": "ミネラル類",
+      "spec": "750ML",
+      "case_quantity": 12,
+      "wholesale_price": 700,
+      "unit_price": 58,
+      "last_shipped": "2026/03/02"
+    },
+    {
+      "supplier_code": "00205539",
+      "product_name": "クリスタルガイザー アルパインスプリングウォーター ペット(24",
+      "category_code": "1201",
+      "category_name": "ミネラル類",
+      "spec": "500ML",
+      "case_quantity": 24,
+      "wholesale_price": 97,
+      "unit_price": 4,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00226133",
+      "product_name": "ヒルドン(発泡)ミネラルウォーター 瓶",
+      "category_code": "1201",
+      "category_name": "ミネラル類",
+      "spec": "330ML",
+      "case_quantity": 24,
+      "wholesale_price": 420,
+      "unit_price": 18,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00236400",
+      "product_name": "Kprice 強炭酸水 500MLペット",
+      "category_code": "1201",
+      "category_name": "ミネラル類",
+      "spec": "500ML",
+      "case_quantity": 24,
+      "wholesale_price": 70,
+      "unit_price": 3,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00236401",
+      "product_name": "Kprice 強炭酸水 1L ペット",
+      "category_code": "1201",
+      "category_name": "ミネラル類",
+      "spec": "1L",
+      "case_quantity": 12,
+      "wholesale_price": 90,
+      "unit_price": 8,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00046074",
+      "product_name": "東京 煌 烏龍茶10倍 1ガロン(コカコーラ直送用)",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 8850,
+      "unit_price": 8850,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00078375",
+      "product_name": "東京BIB 綾鷹1ガロン(コカコーラ直送用)",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 7000,
+      "unit_price": 7000,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00206837",
+      "product_name": "東京PXT 爽健美茶 1ガロン(コカコーラ直送用)",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 8700,
+      "unit_price": 8700,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00221292",
+      "product_name": "伊藤園 健康ミネラルむぎ茶 600mlペット#",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "600ML",
+      "case_quantity": 24,
+      "wholesale_price": 140,
+      "unit_price": 6,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00224225",
+      "product_name": "Kprice 緑茶 2L ペット",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "2L",
+      "case_quantity": 6,
+      "wholesale_price": 158,
+      "unit_price": 26,
+      "last_shipped": "2025/12/28"
+    },
+    {
+      "supplier_code": "00224226",
+      "product_name": "Kprice 烏龍茶 2L ペット",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "2L",
+      "case_quantity": 6,
+      "wholesale_price": 158,
+      "unit_price": 26,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00267328",
+      "product_name": "東京 煌 烏龍茶5倍 1ガロン(コカコーラ直送用)",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 5100,
+      "unit_price": 5100,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00297330",
+      "product_name": "Kprice 麦茶 2L ペット",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "2L",
+      "case_quantity": 6,
+      "wholesale_price": 158,
+      "unit_price": 26,
+      "last_shipped": "2026/03/01"
+    },
+    {
+      "supplier_code": "00297331",
+      "product_name": "Kprice ジャスミン茶 2L ペット",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "2L",
+      "case_quantity": 6,
+      "wholesale_price": 158,
+      "unit_price": 26,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00416243",
+      "product_name": "Kprice とうもろこしのひげ茶 2L ペット",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "2L",
+      "case_quantity": 6,
+      "wholesale_price": 238,
+      "unit_price": 40,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00419421",
+      "product_name": "Kprice 玉露入り緑茶 パック 1L",
+      "category_code": "1202",
+      "category_name": "烏龍茶 緑茶類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 160,
+      "unit_price": 27,
+      "last_shipped": "2025/06/14"
+    },
+    {
+      "supplier_code": "00000262",
+      "product_name": "キリン トロピカーナ100%ジュース グレープフルーツ パック",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 337,
+      "unit_price": 56,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00000815",
+      "product_name": "コカコーラ R瓶",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "190ML",
+      "case_quantity": 24,
+      "wholesale_price": 139,
+      "unit_price": 6,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00000816",
+      "product_name": "デルモンテ クランベリー 瓶(果汁20%)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "750ML",
+      "case_quantity": 6,
+      "wholesale_price": 490,
+      "unit_price": 82,
+      "last_shipped": "2026/01/15"
+    },
+    {
+      "supplier_code": "00000831",
+      "product_name": "カナダドライ ジンジャーエール R瓶",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "207ML",
+      "case_quantity": 24,
+      "wholesale_price": 120,
+      "unit_price": 5,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00000832",
+      "product_name": "カナダドライ トニックウォーター R瓶",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "207ML",
+      "case_quantity": 24,
+      "wholesale_price": 120,
+      "unit_price": 5,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00003424",
+      "product_name": "デルモンテ パイナップル 紙パック(果汁100%)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 499,
+      "unit_price": 83,
+      "last_shipped": "2026/01/20"
+    },
+    {
+      "supplier_code": "00007951",
+      "product_name": "コカコーラ 500ml ペット",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "500ML",
+      "case_quantity": 24,
+      "wholesale_price": 170,
+      "unit_price": 7,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00010598",
+      "product_name": "ウェルチ グレープ100",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "800G",
+      "case_quantity": 8,
+      "wholesale_price": 406,
+      "unit_price": 51,
+      "last_shipped": "2025/12/25"
+    },
+    {
+      "supplier_code": "00015824",
+      "product_name": "バンホーテン リキッドココア ストレートタイプ パック",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 708,
+      "unit_price": 118,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00022994",
+      "product_name": "順造選 クランベリー 瓶(果汁50%)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "180ML",
+      "case_quantity": 20,
+      "wholesale_price": 260,
+      "unit_price": 13,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00024933",
+      "product_name": "マッチ ペット",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "500ML",
+      "case_quantity": 24,
+      "wholesale_price": 133,
+      "unit_price": 6,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00061499",
+      "product_name": "ジェンティーレフルツミックスジュース マンゴー（果汁100%",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 12,
+      "wholesale_price": 440,
+      "unit_price": 37,
+      "last_shipped": "2025/11/04"
+    },
+    {
+      "supplier_code": "00064321",
+      "product_name": "東京ミニッツメイド PXTオレンジ 1ガロン(コカコーラ直送片",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 10800,
+      "unit_price": 10800,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00070463",
+      "product_name": "デルモンテ マンゴー 紙パック(果汁20%)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 469,
+      "unit_price": 78,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00074604",
+      "product_name": "ジューシー トロピカルマンゴー 30% パック",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 345,
+      "unit_price": 58,
+      "last_shipped": "2026/02/16"
+    },
+    {
+      "supplier_code": "00077375",
+      "product_name": "東京ミニッツメイド アップル 1ガロン(コカコーラ直送用)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 8600,
+      "unit_price": 8600,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00077479",
+      "product_name": "サントリー なっちゃん オレンジ ペット",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1.5L",
+      "case_quantity": 8,
+      "wholesale_price": 340,
+      "unit_price": 42,
+      "last_shipped": "2025/12/19"
+    },
+    {
+      "supplier_code": "00205072",
+      "product_name": "東京ミニッツメイド PXTグレープフルーツ 1ガロン(コカコ",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 8600,
+      "unit_price": 8600,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00209027",
+      "product_name": "ミニッツメイド オレンジジュース 100% パック(業務用)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 345,
+      "unit_price": 58,
+      "last_shipped": "2025/06/24"
+    },
+    {
+      "supplier_code": "00219146",
+      "product_name": "東京ミニッツメイド フルーツミックス 1ガロン(コカコーラ直送片",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 8800,
+      "unit_price": 8800,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00219152",
+      "product_name": "東京ミニッツメイド 野菜と果実の健康レシピ 1ガロン(",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 8800,
+      "unit_price": 8800,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00224583",
+      "product_name": "キッコーマン 調製豆乳 1L#",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 244,
+      "unit_price": 41,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00259294",
+      "product_name": "東京フラットスプライトBIB2.5ガロン(コカコーラ直送用)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 18000,
+      "unit_price": 18000,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00259295",
+      "product_name": "東京フラットリアルゴールドBIB2.5ガロン(コカコーラ直送用)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 20500,
+      "unit_price": 20500,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00298374",
+      "product_name": "東京フラットコカコーラBIB2.5ガロン(コカコーラ直送用)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 18600,
+      "unit_price": 18600,
+      "last_shipped": "2025/04/10"
+    },
+    {
+      "supplier_code": "00298375",
+      "product_name": "東京フラットMMレモン10%BIB 2.5ガロン(コカコーラ直送片",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 20000,
+      "unit_price": 20000,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00298376",
+      "product_name": "東京フラットMMオレンジ10%BIB 2.5ガロン(コカコーラ直送",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 22600,
+      "unit_price": 22600,
+      "last_shipped": "2025/04/10"
+    },
+    {
+      "supplier_code": "00298377",
+      "product_name": "東京フラットカルピスBIB2.5ガロン(コカコーラ直送用)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 22800,
+      "unit_price": 22800,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00299292",
+      "product_name": "東京フラットカナダドライジンジャーエールBIB2.5G(コカコー",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 18100,
+      "unit_price": 18100,
+      "last_shipped": "2025/04/10"
+    },
+    {
+      "supplier_code": "00302402",
+      "product_name": "東京フラット コカコーラゼロ BIB 2.5ガロン(コカコーラ直送片",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 17500,
+      "unit_price": 17500,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00302404",
+      "product_name": "東京フラット ファンタメロンソーダ BIB 2.5ガロン(コカコーラ直",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 13300,
+      "unit_price": 13300,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00304275",
+      "product_name": "ミニッツメイド アップルジュース 100% パック",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 325,
+      "unit_price": 54,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00307694",
+      "product_name": "ミニッツメイド ピンクグレープフルーツ 100%パック",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 325,
+      "unit_price": 54,
+      "last_shipped": "2025/12/01"
+    },
+    {
+      "supplier_code": "00308320",
+      "product_name": "東京フラットMMぶどう10%BIB2.5ガロン(コカコーラ直送",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 18760,
+      "unit_price": 18760,
+      "last_shipped": "2025/04/10"
+    },
+    {
+      "supplier_code": "00335096",
+      "product_name": "東京フラットカナダドライトニックウォーター BIB1.25ガロン",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1.25ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 9100,
+      "unit_price": 9100,
+      "last_shipped": "2025/04/10"
+    },
+    {
+      "supplier_code": "00336829",
+      "product_name": "アサヒ モンスター パイプラインパンチ 缶",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "355ML",
+      "case_quantity": 24,
+      "wholesale_price": 180,
+      "unit_price": 8,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00343950",
+      "product_name": "カナダドライ ジンジャーエール 1.5L ペット",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1.5L",
+      "case_quantity": 6,
+      "wholesale_price": 330,
+      "unit_price": 55,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00345568",
+      "product_name": "東京フラットケーすっきりオレンジBIB 2.5ガロン(コカ",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 22300,
+      "unit_price": 22300,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00345622",
+      "product_name": "東京フラットケーすっきり白ぶどう BIB 2.5ガロン(コ",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 22300,
+      "unit_price": 22300,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00346425",
+      "product_name": "サントリー ジンジャエール PET（業務専用）",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "330ML",
+      "case_quantity": 24,
+      "wholesale_price": 105,
+      "unit_price": 4,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00346900",
+      "product_name": "東京フラットドクターペッパーBIB 2.5ガロン(コカコーラ直送用)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 18000,
+      "unit_price": 18000,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00350161",
+      "product_name": "東京フラットファンタグレープソーダBIB 2.5ガロン(コカコーラ直",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 14500,
+      "unit_price": 14500,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00361836",
+      "product_name": "東京フラットファンタレモンBIB2.5ガロン(コカコーラ直送用)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 16600,
+      "unit_price": 16600,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00368602",
+      "product_name": "デルモンテ クランベリー 紙パック(果汁30%)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 6,
+      "wholesale_price": 495,
+      "unit_price": 82,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00407651",
+      "product_name": "東京フラットコカコーラゼロBIB 1.25ガロン(コカコーラ直送片",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1.25ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 8700,
+      "unit_price": 8700,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00408369",
+      "product_name": "デルモンテ 食塩無添加トマトジュース ペット 800G",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "800G",
+      "case_quantity": 15,
+      "wholesale_price": 205,
+      "unit_price": 14,
+      "last_shipped": "2025/05/06"
+    },
+    {
+      "supplier_code": "00408370",
+      "product_name": "デルモンテ トマトジュース ペット 800G",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "800G",
+      "case_quantity": 15,
+      "wholesale_price": 199,
+      "unit_price": 13,
+      "last_shipped": "2025/12/07"
+    },
+    {
+      "supplier_code": "00410000",
+      "product_name": "アグロス グレープ(ぶどう)ジュース パック(果汁100%)",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "1L",
+      "case_quantity": 12,
+      "wholesale_price": 260,
+      "unit_price": 22,
+      "last_shipped": "2025/11/18"
+    },
+    {
+      "supplier_code": "00413364",
+      "product_name": "東京フラットMMピーチ10%BIB 2.5ガロン(コカコーラ直送",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "2.5ガロン",
+      "case_quantity": 1,
+      "wholesale_price": 23500,
+      "unit_price": 23500,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00415574",
+      "product_name": "業務用Jモンスター エナジー 250ml缶#",
+      "category_code": "1203",
+      "category_name": "ジュース類",
+      "spec": "250ML",
+      "case_quantity": 30,
+      "wholesale_price": 160,
+      "unit_price": 5,
+      "last_shipped": "2025/06/13"
+    },
+    {
+      "supplier_code": "00000091",
+      "product_name": "MY レモン",
+      "category_code": "1206",
+      "category_name": "コンク類",
+      "spec": "720ML",
+      "case_quantity": 12,
+      "wholesale_price": 400,
+      "unit_price": 33,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00000478",
+      "product_name": "エトナ シシリーレモンジュース",
+      "category_code": "1206",
+      "category_name": "コンク類",
+      "spec": "600ML",
+      "case_quantity": 12,
+      "wholesale_price": 703,
+      "unit_price": 59,
+      "last_shipped": "2026/01/31"
+    },
+    {
+      "supplier_code": "00015150",
+      "product_name": "モナン ラズベリー(フランボワーズ)",
+      "category_code": "1206",
+      "category_name": "コンク類",
+      "spec": "700ML",
+      "case_quantity": 6,
+      "wholesale_price": 1530,
+      "unit_price": 255,
+      "last_shipped": "2025/09/26"
+    },
+    {
+      "supplier_code": "00023416",
+      "product_name": "アサヒ シロップ ライム果汁入り",
+      "category_code": "1206",
+      "category_name": "コンク類",
+      "spec": "600ML",
+      "case_quantity": 12,
+      "wholesale_price": 450,
+      "unit_price": 38,
+      "last_shipped": "2025/12/28"
+    },
+    {
+      "supplier_code": "00229511",
+      "product_name": "スミダ リキッドシュガー(ガムシロップ)",
+      "category_code": "1206",
+      "category_name": "コンク類",
+      "spec": "1L",
+      "case_quantity": 12,
+      "wholesale_price": 330,
+      "unit_price": 28,
+      "last_shipped": "2025/10/12"
+    },
+    {
+      "supplier_code": "00010930",
+      "product_name": "大塚製薬 ポカリスエット ペット",
+      "category_code": "1207",
+      "category_name": "機能性飲料類",
+      "spec": "500ML",
+      "case_quantity": 24,
+      "wholesale_price": 140,
+      "unit_price": 6,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00041907",
+      "product_name": "レッドブル",
+      "category_code": "1207",
+      "category_name": "機能性飲料類",
+      "spec": "250ML",
+      "case_quantity": 24,
+      "wholesale_price": 148,
+      "unit_price": 6,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00232568",
+      "product_name": "大塚製薬 ポカリスエット イオンウォーター 500ML ペット",
+      "category_code": "1207",
+      "category_name": "機能性飲料類",
+      "spec": "500ML",
+      "case_quantity": 24,
+      "wholesale_price": 140,
+      "unit_price": 6,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00000710",
+      "product_name": "スプーン印 上白糖",
+      "category_code": "1208",
+      "category_name": "調味料類",
+      "spec": "1KG",
+      "case_quantity": 20,
+      "wholesale_price": 360,
+      "unit_price": 18,
+      "last_shipped": null
+    },
+    {
+      "supplier_code": "00404900",
+      "product_name": "Kprice サラダ油 缶16.5KG",
+      "category_code": "1208",
+      "category_name": "調味料類",
+      "spec": "16.5KG",
+      "case_quantity": 1,
+      "wholesale_price": 6365,
+      "unit_price": 6365,
+      "last_shipped": "2026/02/26"
+    },
+    {
+      "supplier_code": "00000850",
+      "product_name": "サッポロ炭酸ガス ショート 5KG",
+      "category_code": "1301",
+      "category_name": "その他",
+      "spec": "5KG",
+      "case_quantity": 1,
+      "wholesale_price": 3200,
+      "unit_price": 3200,
+      "last_shipped": "2025/12/01"
+    }
+  ]
+}
