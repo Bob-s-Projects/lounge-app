@@ -15,6 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { Button } from "@/components/ui/button"
 import {
   Cherry,
   Sun,
@@ -24,6 +25,7 @@ import {
   Lightbulb,
   FlaskConical,
   CheckCircle2,
+  ExternalLink,
 } from "lucide-react"
 
 // ── Static data ──
@@ -203,6 +205,27 @@ export default function SeasonalPage() {
           </div>
         </CardHeader>
         <CardContent>
+          <div className="flex gap-2 mb-4">
+            <a
+              href="https://ledian-menu-dashboard.pages.dev/kakigori.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm font-medium hover:bg-accent transition-colors"
+            >
+              <IceCreamCone className="size-4" />
+              春かき氷レシピ集
+              <ExternalLink className="size-3 text-muted-foreground" />
+            </a>
+            <a
+              href="https://ledian-menu-dashboard.pages.dev/recipes.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm font-medium hover:bg-accent transition-colors"
+            >
+              全レシピを見る
+              <ExternalLink className="size-3 text-muted-foreground" />
+            </a>
+          </div>
           <div className="rounded-lg border overflow-x-auto">
             <Table>
               <TableHeader>

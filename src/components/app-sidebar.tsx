@@ -11,6 +11,10 @@ import {
   BookOpen,
   IceCream,
   BarChart3,
+  Vote,
+  ChefHat,
+  Kanban,
+  ExternalLink,
 } from "lucide-react"
 
 import {
@@ -31,6 +35,27 @@ const menuNav = [
   { title: "グランドメニュー", href: "/grand-menu", icon: BookOpen },
   { title: "季節メニュー", href: "/seasonal", icon: IceCream },
   { title: "商品マスタ", href: "/products", icon: Package },
+]
+
+const planNav = [
+  {
+    title: "メニュー投票",
+    href: "https://ledian-menu-dashboard.pages.dev",
+    icon: Vote,
+    external: true,
+  },
+  {
+    title: "レシピ集",
+    href: "https://ledian-menu-dashboard.pages.dev/recipes.html",
+    icon: ChefHat,
+    external: true,
+  },
+  {
+    title: "発売計画",
+    href: "https://ledian-menu-dashboard.pages.dev/#plan",
+    icon: Kanban,
+    external: true,
+  },
 ]
 
 const analysisNav = [
@@ -107,6 +132,30 @@ export function AppSidebar() {
                       <item.icon className="size-4" />
                       <span>{item.title}</span>
                     </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarSeparator />
+        <SidebarGroup>
+          <SidebarGroupLabel>企画・投票</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {planNav.map((item) => (
+                <SidebarMenuItem key={item.href}>
+                  <SidebarMenuButton tooltip={item.title}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 w-full"
+                    >
+                      <item.icon className="size-4" />
+                      <span>{item.title}</span>
+                      <ExternalLink className="size-3 ml-auto text-muted-foreground" />
+                    </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
