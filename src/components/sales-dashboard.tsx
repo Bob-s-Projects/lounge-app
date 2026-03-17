@@ -37,6 +37,10 @@ import {
   ArrowUpDown,
   ArrowUp,
   ArrowDown,
+  Banknote,
+  Receipt,
+  Wallet,
+  Package,
 } from "lucide-react"
 
 // ── Types ──
@@ -90,24 +94,24 @@ function formatNumber(v: number): string {
   return new Intl.NumberFormat("ja-JP").format(v)
 }
 
-// Chart colors
+// Chart colors - indigo brand palette
 const CHART_COLORS = [
-  "hsl(221, 83%, 53%)",
-  "hsl(262, 83%, 58%)",
-  "hsl(330, 81%, 60%)",
-  "hsl(25, 95%, 53%)",
-  "hsl(142, 71%, 45%)",
-  "hsl(199, 89%, 48%)",
-  "hsl(47, 96%, 53%)",
-  "hsl(0, 72%, 51%)",
-  "hsl(180, 70%, 45%)",
-  "hsl(300, 60%, 50%)",
+  "hsl(239, 84%, 67%)",
+  "hsl(224, 76%, 48%)",
+  "hsl(45, 93%, 47%)",
+  "hsl(160, 60%, 45%)",
+  "hsl(350, 80%, 60%)",
+  "hsl(187, 72%, 48%)",
+  "hsl(263, 70%, 58%)",
+  "hsl(30, 90%, 55%)",
+  "hsl(200, 80%, 50%)",
+  "hsl(330, 65%, 55%)",
 ]
 
 const chartConfig: ChartConfig = {
   revenue: {
     label: "売上",
-    color: "hsl(221, 83%, 53%)",
+    color: "hsl(239, 84%, 67%)",
   },
 }
 
@@ -226,23 +230,29 @@ export function SalesDashboard({
     <div className="space-y-6">
       {/* Summary cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-indigo-50/80 to-white dark:from-indigo-950/20 dark:to-card border-indigo-100 dark:border-indigo-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>総売上</CardDescription>
+            <div className="size-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+              <Banknote className="size-4 text-indigo-600 dark:text-indigo-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCompactYen(totalRevenue)}</div>
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">{formatCompactYen(totalRevenue)}</div>
             <p className="text-xs text-muted-foreground">
               {formatYen(totalRevenue)}
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-blue-50/80 to-white dark:from-blue-950/20 dark:to-card border-blue-100 dark:border-blue-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>取引数</CardDescription>
+            <div className="size-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
+              <Receipt className="size-4 text-blue-600 dark:text-blue-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">
               {formatNumber(totalTransactions)}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -250,23 +260,29 @@ export function SalesDashboard({
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-emerald-50/80 to-white dark:from-emerald-950/20 dark:to-card border-emerald-100 dark:border-emerald-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>平均客単価</CardDescription>
+            <div className="size-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
+              <Wallet className="size-4 text-emerald-600 dark:text-emerald-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatYen(avgSpend)}</div>
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">{formatYen(avgSpend)}</div>
             <p className="text-xs text-muted-foreground">
               総売上 / 取引数
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-amber-50/80 to-white dark:from-amber-950/20 dark:to-card border-amber-100 dark:border-amber-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>商品数</CardDescription>
+            <div className="size-8 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+              <Package className="size-4 text-amber-600 dark:text-amber-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{uniqueProductCount}</div>
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">{uniqueProductCount}</div>
             <p className="text-xs text-muted-foreground">
               売上のあるユニーク商品
             </p>
@@ -275,7 +291,7 @@ export function SalesDashboard({
       </div>
 
       {/* Category chart */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl">
         <CardHeader>
           <CardTitle>カテゴリ別売上ランキング</CardTitle>
           <CardDescription>
@@ -292,7 +308,7 @@ export function SalesDashboard({
               layout="vertical"
               margin={{ top: 5, right: 30, bottom: 5, left: 0 }}
             >
-              <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+              <CartesianGrid strokeDasharray="3 3" horizontal={false} strokeOpacity={0.3} />
               <XAxis
                 type="number"
                 tickLine={false}
@@ -317,7 +333,7 @@ export function SalesDashboard({
                   />
                 }
               />
-              <Bar dataKey="revenue" radius={[0, 4, 4, 0]}>
+              <Bar dataKey="revenue" radius={[0, 6, 6, 0]}>
                 {top10Categories.map((_, index) => (
                   <Cell
                     key={`cat-${index}`}
@@ -331,7 +347,7 @@ export function SalesDashboard({
       </Card>
 
       {/* Top 30 table */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl">
         <CardHeader>
           <CardTitle>売れ筋商品 TOP30</CardTitle>
           <CardDescription>
@@ -339,15 +355,15 @@ export function SalesDashboard({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="rounded-lg border overflow-x-auto">
+          <div className="rounded-xl border overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow>
-                  <TableHead className="w-12">#</TableHead>
-                  <TableHead>商品名</TableHead>
-                  <TableHead>カテゴリ</TableHead>
+                <TableRow className="bg-muted/50">
+                  <TableHead className="w-12 font-semibold text-xs uppercase tracking-wider">#</TableHead>
+                  <TableHead className="font-semibold text-xs uppercase tracking-wider">商品名</TableHead>
+                  <TableHead className="font-semibold text-xs uppercase tracking-wider">カテゴリ</TableHead>
                   <TableHead
-                    className="text-right cursor-pointer select-none"
+                    className="text-right cursor-pointer select-none font-semibold text-xs uppercase tracking-wider"
                     onClick={() => handleSort("quantity")}
                   >
                     <span className="inline-flex items-center">
@@ -356,7 +372,7 @@ export function SalesDashboard({
                     </span>
                   </TableHead>
                   <TableHead
-                    className="text-right cursor-pointer select-none"
+                    className="text-right cursor-pointer select-none font-semibold text-xs uppercase tracking-wider"
                     onClick={() => handleSort("revenue")}
                   >
                     <span className="inline-flex items-center">
@@ -365,7 +381,7 @@ export function SalesDashboard({
                     </span>
                   </TableHead>
                   <TableHead
-                    className="text-right cursor-pointer select-none"
+                    className="text-right cursor-pointer select-none font-semibold text-xs uppercase tracking-wider"
                     onClick={() => handleSort("avg_price")}
                   >
                     <span className="inline-flex items-center">
@@ -374,7 +390,7 @@ export function SalesDashboard({
                     </span>
                   </TableHead>
                   <TableHead
-                    className="text-right cursor-pointer select-none"
+                    className="text-right cursor-pointer select-none font-semibold text-xs uppercase tracking-wider"
                     onClick={() => handleSort("transaction_count")}
                   >
                     <span className="inline-flex items-center">
@@ -386,7 +402,7 @@ export function SalesDashboard({
               </TableHeader>
               <TableBody>
                 {sortedTop30.map((item, i) => (
-                  <TableRow key={item.product_id}>
+                  <TableRow key={item.product_id} className={i % 2 === 0 ? "bg-muted/20" : ""}>
                     <TableCell className="font-mono text-xs text-muted-foreground">
                       {i + 1}
                     </TableCell>
@@ -398,16 +414,16 @@ export function SalesDashboard({
                         {item.category_name}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-right tabular-nums">
+                    <TableCell className="text-right tabular-nums font-medium">
                       {formatNumber(item.total_quantity)}
                     </TableCell>
-                    <TableCell className="text-right tabular-nums">
+                    <TableCell className="text-right tabular-nums font-medium">
                       {formatYen(item.total_sales)}
                     </TableCell>
-                    <TableCell className="text-right tabular-nums">
+                    <TableCell className="text-right tabular-nums font-medium">
                       {formatYen(item.avg_price)}
                     </TableCell>
-                    <TableCell className="text-right tabular-nums">
+                    <TableCell className="text-right tabular-nums font-medium">
                       {formatNumber(item.transaction_count)}
                     </TableCell>
                   </TableRow>
@@ -419,7 +435,7 @@ export function SalesDashboard({
       </Card>
 
       {/* Category detail tabs */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl">
         <CardHeader>
           <CardTitle>カテゴリ別詳細</CardTitle>
           <CardDescription>
@@ -432,9 +448,9 @@ export function SalesDashboard({
             onValueChange={setActiveCategory}
           >
             <ScrollArea className="w-full">
-              <TabsList className="w-full justify-start flex-wrap h-auto gap-1">
+              <TabsList className="w-full justify-start flex-wrap h-auto gap-1 bg-muted/40 p-1 rounded-lg">
                 {categories.map((cat) => (
-                  <TabsTrigger key={cat} value={cat} className="text-xs">
+                  <TabsTrigger key={cat} value={cat} className="text-xs transition-all data-[state=active]:font-semibold data-[state=active]:shadow-sm">
                     {cat}
                   </TabsTrigger>
                 ))}
@@ -443,38 +459,38 @@ export function SalesDashboard({
 
             {categories.map((cat) => (
               <TabsContent key={cat} value={cat}>
-                <div className="rounded-lg border overflow-x-auto mt-4">
+                <div className="rounded-xl border overflow-x-auto mt-4">
                   <Table>
                     <TableHeader>
-                      <TableRow>
-                        <TableHead className="w-12">#</TableHead>
-                        <TableHead>商品名</TableHead>
-                        <TableHead className="text-right">数量</TableHead>
-                        <TableHead className="text-right">売上</TableHead>
-                        <TableHead className="text-right">平均単価</TableHead>
-                        <TableHead className="text-right">取引数</TableHead>
+                      <TableRow className="bg-muted/50">
+                        <TableHead className="w-12 font-semibold text-xs uppercase tracking-wider">#</TableHead>
+                        <TableHead className="font-semibold text-xs uppercase tracking-wider">商品名</TableHead>
+                        <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">数量</TableHead>
+                        <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">売上</TableHead>
+                        <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">平均単価</TableHead>
+                        <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">取引数</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {cat === activeCategory &&
                         categoryProducts.map((item, i) => (
-                          <TableRow key={item.product_id}>
+                          <TableRow key={item.product_id} className={i % 2 === 0 ? "bg-muted/20" : ""}>
                             <TableCell className="font-mono text-xs text-muted-foreground">
                               {i + 1}
                             </TableCell>
                             <TableCell className="font-medium">
                               {item.product_name}
                             </TableCell>
-                            <TableCell className="text-right tabular-nums">
+                            <TableCell className="text-right tabular-nums font-medium">
                               {formatNumber(item.total_quantity)}
                             </TableCell>
-                            <TableCell className="text-right tabular-nums">
+                            <TableCell className="text-right tabular-nums font-medium">
                               {formatYen(item.total_sales)}
                             </TableCell>
-                            <TableCell className="text-right tabular-nums">
+                            <TableCell className="text-right tabular-nums font-medium">
                               {formatYen(item.avg_price)}
                             </TableCell>
-                            <TableCell className="text-right tabular-nums">
+                            <TableCell className="text-right tabular-nums font-medium">
                               {formatNumber(item.transaction_count)}
                             </TableCell>
                           </TableRow>

@@ -1,4 +1,5 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { BreadcrumbNav } from "@/components/breadcrumb-nav"
 import {
   Card,
   CardContent,
@@ -21,6 +22,7 @@ import {
   Sun,
   Leaf,
   Snowflake,
+  IceCream,
   IceCreamCone,
   Lightbulb,
   FlaskConical,
@@ -102,11 +104,15 @@ export default function SeasonalPage() {
 
   return (
     <div className="flex flex-col gap-6 p-4 md:p-6">
-      <div className="flex items-center gap-2">
+      <BreadcrumbNav />
+      <div className="flex items-center gap-3">
         <SidebarTrigger className="md:hidden" />
+        <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+          <IceCream className="size-5 text-primary" />
+        </div>
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">季節メニュー</h1>
-          <p className="text-sm text-muted-foreground">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">季節メニュー</h1>
+          <p className="mt-0.5 text-sm text-muted-foreground">
             季節限定メニューの企画・管理
           </p>
         </div>

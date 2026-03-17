@@ -35,6 +35,10 @@ import {
   TrendingUp,
   HelpCircle,
   ArrowUpRight,
+  CheckCircle2,
+  BarChart3,
+  AlertCircle,
+  CircleHelp,
 } from "lucide-react";
 import type { CostMatch } from "@/lib/cost-matching";
 import { formatYen } from "@/lib/format";
@@ -60,23 +64,23 @@ interface AnalysisDashboardProps {
 const distributionConfig: ChartConfig = {
   count: {
     label: "商品数",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(239, 84%, 67%)",
   },
 };
 
 const categoryConfig: ChartConfig = {
   avgRatio: {
     label: "平均原価率",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(45, 93%, 47%)",
   },
 };
 
 // ── Color helpers ──
 
 function ratioColor(pct: number): string {
-  if (pct < 25) return "hsl(152, 60%, 45%)";
-  if (pct <= 35) return "hsl(45, 90%, 50%)";
-  return "hsl(0, 75%, 55%)";
+  if (pct < 25) return "hsl(160, 60%, 45%)";
+  if (pct <= 35) return "hsl(45, 93%, 47%)";
+  return "hsl(350, 80%, 55%)";
 }
 
 function RatioBadge({ ratio }: { ratio: number }) {
@@ -146,23 +150,29 @@ export function AnalysisDashboard({
     <div className="space-y-6">
       {/* Summary cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-blue-50/80 to-white dark:from-blue-950/20 dark:to-card border-blue-100 dark:border-blue-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>マッチ済み商品</CardDescription>
+            <div className="size-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
+              <CheckCircle2 className="size-4 text-blue-600 dark:text-blue-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalMatched}</div>
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">{totalMatched}</div>
             <p className="text-xs text-muted-foreground">
               全{totalProducts}商品中
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-indigo-50/80 to-white dark:from-indigo-950/20 dark:to-card border-indigo-100 dark:border-indigo-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>平均推定原価率</CardDescription>
+            <div className="size-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+              <BarChart3 className="size-4 text-indigo-600 dark:text-indigo-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">
               {(avgRatio * 100).toFixed(1)}%
             </div>
             <p className="text-xs text-muted-foreground">
@@ -170,23 +180,29 @@ export function AnalysisDashboard({
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-red-50/80 to-white dark:from-red-950/20 dark:to-card border-red-100 dark:border-red-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>高原価率商品</CardDescription>
+            <div className="size-8 rounded-lg bg-red-100 dark:bg-red-900/40 flex items-center justify-center">
+              <AlertCircle className="size-4 text-red-600 dark:text-red-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-red-600">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums text-red-600">
               {highCostProducts.length}
             </div>
             <p className="text-xs text-muted-foreground">原価率35%超</p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-amber-50/80 to-white dark:from-amber-950/20 dark:to-card border-amber-100 dark:border-amber-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>未マッチ商品</CardDescription>
+            <div className="size-8 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+              <CircleHelp className="size-4 text-amber-600 dark:text-amber-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-amber-600">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums text-amber-600">
               {unmatchedProducts.length}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -199,7 +215,7 @@ export function AnalysisDashboard({
       {/* Charts row */}
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Distribution chart */}
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl">
           <CardHeader>
             <CardTitle>原価率分布</CardTitle>
             <CardDescription>
@@ -209,22 +225,22 @@ export function AnalysisDashboard({
           <CardContent>
             <ChartContainer config={distributionConfig} className="h-[280px] w-full">
               <BarChart data={distribution} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} strokeOpacity={0.3} />
                 <XAxis dataKey="range" tickLine={false} axisLine={false} />
                 <YAxis tickLine={false} axisLine={false} />
                 <ChartTooltip content={<ChartTooltipContent />} />
-                <Bar dataKey="count" radius={[4, 4, 0, 0]}>
+                <Bar dataKey="count" radius={[6, 6, 0, 0]}>
                   {distribution.map((entry, index) => (
                     <Cell
                       key={`cell-${index}`}
                       fill={
                         index < 2
-                          ? "hsl(152, 60%, 45%)"
+                          ? "hsl(160, 60%, 45%)"
                           : index === 2
-                          ? "hsl(152, 40%, 55%)"
+                          ? "hsl(160, 40%, 55%)"
                           : index === 3
-                          ? "hsl(45, 90%, 50%)"
-                          : "hsl(0, 75%, 55%)"
+                          ? "hsl(45, 93%, 47%)"
+                          : "hsl(350, 80%, 55%)"
                       }
                     />
                   ))}
@@ -235,7 +251,7 @@ export function AnalysisDashboard({
         </Card>
 
         {/* Category bar chart */}
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl">
           <CardHeader>
             <CardTitle>カテゴリ別原価率</CardTitle>
             <CardDescription>
@@ -249,7 +265,7 @@ export function AnalysisDashboard({
                 layout="vertical"
                 margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
               >
-                <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                <CartesianGrid strokeDasharray="3 3" horizontal={false} strokeOpacity={0.3} />
                 <XAxis
                   type="number"
                   tickLine={false}
@@ -274,7 +290,7 @@ export function AnalysisDashboard({
                     />
                   }
                 />
-                <Bar dataKey="avgRatio" radius={[0, 4, 4, 0]}>
+                <Bar dataKey="avgRatio" radius={[0, 6, 6, 0]}>
                   {categoryData.slice(0, 12).map((entry, index) => (
                     <Cell
                       key={`cat-${index}`}
@@ -289,7 +305,7 @@ export function AnalysisDashboard({
       </div>
 
       {/* High cost items table */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl">
         <CardHeader>
           <CardTitle>原価率ランキング（上位20件）</CardTitle>
           <CardDescription>
@@ -297,23 +313,23 @@ export function AnalysisDashboard({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="rounded-lg border overflow-x-auto">
+          <div className="rounded-xl border overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow>
-                  <TableHead className="w-12">#</TableHead>
-                  <TableHead>商品名</TableHead>
-                  <TableHead>カテゴリ</TableHead>
-                  <TableHead className="text-right">販売価格</TableHead>
-                  <TableHead className="text-right">推定原価</TableHead>
-                  <TableHead className="text-right">推定原価率</TableHead>
-                  <TableHead>種別</TableHead>
-                  <TableHead>内訳</TableHead>
+                <TableRow className="bg-muted/50">
+                  <TableHead className="w-12 font-semibold text-xs uppercase tracking-wider">#</TableHead>
+                  <TableHead className="font-semibold text-xs uppercase tracking-wider">商品名</TableHead>
+                  <TableHead className="font-semibold text-xs uppercase tracking-wider">カテゴリ</TableHead>
+                  <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">販売価格</TableHead>
+                  <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">推定原価</TableHead>
+                  <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">推定原価率</TableHead>
+                  <TableHead className="font-semibold text-xs uppercase tracking-wider">種別</TableHead>
+                  <TableHead className="font-semibold text-xs uppercase tracking-wider">内訳</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {highCostItems.map((item, i) => (
-                  <TableRow key={item.product_id}>
+                  <TableRow key={item.product_id} className={i % 2 === 0 ? "bg-muted/20" : ""}>
                     <TableCell className="font-mono text-xs text-muted-foreground">
                       {i + 1}
                     </TableCell>
@@ -323,10 +339,10 @@ export function AnalysisDashboard({
                     <TableCell>
                       <Badge variant="secondary">{item.category_name}</Badge>
                     </TableCell>
-                    <TableCell className="text-right tabular-nums">
+                    <TableCell className="text-right tabular-nums font-medium">
                       {formatYen(item.selling_price)}
                     </TableCell>
-                    <TableCell className="text-right tabular-nums">
+                    <TableCell className="text-right tabular-nums font-medium">
                       {formatYen(item.estimated_cost)}
                     </TableCell>
                     <TableCell className="text-right">
@@ -347,12 +363,14 @@ export function AnalysisDashboard({
       </Card>
 
       {/* Suggestions cards */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {/* High cost products */}
-        <Card className="border-red-200 dark:border-red-900">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl border-red-200 dark:border-red-900/50 bg-gradient-to-br from-red-50/40 to-white dark:from-red-950/10 dark:to-card">
           <CardHeader className="pb-3">
             <div className="flex items-center gap-2">
-              <AlertTriangle className="size-5 text-red-500" />
+              <div className="size-8 rounded-lg bg-red-100 dark:bg-red-900/40 flex items-center justify-center">
+                <AlertTriangle className="size-4 text-red-500" />
+              </div>
               <CardTitle className="text-base">原価率が高い商品</CardTitle>
             </div>
             <CardDescription>
@@ -389,10 +407,12 @@ export function AnalysisDashboard({
         </Card>
 
         {/* Unmatched products */}
-        <Card className="border-amber-200 dark:border-amber-900">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl border-amber-200 dark:border-amber-900/50 bg-gradient-to-br from-amber-50/40 to-white dark:from-amber-950/10 dark:to-card">
           <CardHeader className="pb-3">
             <div className="flex items-center gap-2">
-              <HelpCircle className="size-5 text-amber-500" />
+              <div className="size-8 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+                <HelpCircle className="size-4 text-amber-500" />
+              </div>
               <CardTitle className="text-base">原価未設定商品</CardTitle>
             </div>
             <CardDescription>
@@ -412,7 +432,7 @@ export function AnalysisDashboard({
                     className="flex items-center justify-between text-sm"
                   >
                     <span className="truncate mr-2">{item.product_name}</span>
-                    <span className="text-xs text-muted-foreground shrink-0">
+                    <span className="text-xs text-muted-foreground shrink-0 tabular-nums">
                       {formatYen(item.selling_price)}
                     </span>
                   </li>
@@ -428,10 +448,12 @@ export function AnalysisDashboard({
         </Card>
 
         {/* High margin products */}
-        <Card className="border-emerald-200 dark:border-emerald-900">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl border-emerald-200 dark:border-emerald-900/50 bg-gradient-to-br from-emerald-50/40 to-white dark:from-emerald-950/10 dark:to-card">
           <CardHeader className="pb-3">
             <div className="flex items-center gap-2">
-              <TrendingUp className="size-5 text-emerald-500" />
+              <div className="size-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
+                <TrendingUp className="size-4 text-emerald-500" />
+              </div>
               <CardTitle className="text-base">利益率が高い商品</CardTitle>
             </div>
             <CardDescription>

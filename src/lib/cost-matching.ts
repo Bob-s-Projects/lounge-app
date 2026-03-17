@@ -2,7 +2,7 @@ import type { Product, SupplierItem, SupplierData } from "./types";
 
 // ── Types ──────────────────────────────────────────────────────────
 
-export type MatchType = "direct" | "recipe" | "unmatched";
+export type MatchType = "direct" | "recipe" | "estimated" | "unmatched";
 
 export type CostMatch = {
   product_id: string;
@@ -354,6 +354,104 @@ const DIRECT_MATCHES: DirectMatch[] = [
     posKeywords: ["茉莉花"],
     supplierKeyword: "ジャスミン茉莉花",
     servingMl: 60,
+  },
+  // ── Soft drinks (glass serve ~300ml from 1.5-2L container) ──
+  {
+    posKeywords: ["ウーロン茶"],
+    supplierKeyword: "烏龍茶 2L",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["オレンジジュース"],
+    supplierKeyword: "なっちゃん オレンジ",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["グレープフルーツ"],
+    supplierKeyword: "グレープフルーツ パック",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["コーラ"],
+    supplierKeyword: "コカコーラ 500ml",
+    servingMl: 0,
+  },
+  {
+    posKeywords: ["ジンジャーエール"],
+    supplierKeyword: "ジンジャーエール 1.5L",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["パインジュース"],
+    supplierKeyword: "パイナップル 紙パック",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["マンゴージュース"],
+    supplierKeyword: "トロピカルマンゴー",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["ぶどうジュース"],
+    supplierKeyword: "グレープ(ぶどう)",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["アップルジュース"],
+    supplierKeyword: "アップルジュース",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["クランベリージュース"],
+    supplierKeyword: "クランベリー",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["紅茶"],
+    supplierKeyword: "無糖紅茶 2L",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["緑茶"],
+    supplierKeyword: "緑茶 2L",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["麦茶"],
+    supplierKeyword: "麦茶 2L",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["ジャスミン茶"],
+    supplierKeyword: "ジャスミン茶 2L",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["コーン茶"],
+    supplierKeyword: "とうもろこしのひげ茶",
+    servingMl: 300,
+  },
+  {
+    posKeywords: ["ココア"],
+    supplierKeyword: "バンホーテン リキッドココア",
+    servingMl: 200,
+  },
+  {
+    posKeywords: ["コーヒー"],
+    supplierKeyword: "ジョージアカフェ ボトルコーヒー",
+    servingMl: 200,
+  },
+  // House whisky
+  {
+    posKeywords: ["ハウスウィスキー"],
+    supplierKeyword: "トリスクラシック",
+    servingMl: 30,
+  },
+  // Tequila shots
+  {
+    posKeywords: ["アネホ"],
+    supplierKeyword: "クエルボ 1800 テキーラ アネホ",
+    servingMl: 45,
   },
 ];
 
@@ -995,7 +1093,20 @@ export function matchCosts(
       }
     }
 
-    // 4. Unmatched
+    // 4. Estimated cost for categories without supplier data
+    const estimatedResult = estimateCost(product);
+    if (estimatedResult) {
+      return {
+        ...base,
+        estimated_cost: estimatedResult.cost,
+        cost_ratio: Math.round((estimatedResult.cost / product.price) * 1000) / 1000,
+        match_type: "estimated" as const,
+        match_details: estimatedResult.detail,
+        supplier_items: [],
+      };
+    }
+
+    // 5. Unmatched
     return {
       ...base,
       estimated_cost: 0,
@@ -1005,4 +1116,83 @@ export function matchCosts(
       supplier_items: [],
     };
   });
+}
+
+// ── Estimated costs for items without supplier data ───────────────
+
+type EstimatedCostResult = { cost: number; detail: string };
+
+function estimateCost(product: Product): EstimatedCostResult | null {
+  const cat = product.category_name;
+  const name = product.product_name;
+  const price = product.price;
+
+  // Food: ~32% cost ratio (typical lounge food)
+  if (cat === "フード") {
+    const cost = Math.round(price * 0.32);
+    return { cost, detail: `フード推定(原価率32%: ¥${cost})` };
+  }
+  if (cat === "アフヌン") {
+    const cost = Math.round(price * 0.30);
+    return { cost, detail: `アフタヌーンティー推定(原価率30%: ¥${cost})` };
+  }
+
+  // Kakigori: ~25% for S, ~22% for W/L (larger = higher margin)
+  if (cat === "通常かき氷" || cat === "季節かき氷" || cat === "氷ヲ刻メ") {
+    const ratio = price >= 1600 ? 0.22 : 0.28;
+    const cost = Math.round(price * ratio);
+    return { cost, detail: `かき氷推定(原価率${Math.round(ratio * 100)}%: ¥${cost})` };
+  }
+
+  // Espresso/Latte: fixed cost estimate (machine + beans + milk)
+  if (cat === "ソフトドリンク") {
+    if (name.includes("エスプレッソ")) {
+      const isDouble = name.includes("W");
+      const cost = isDouble ? 60 : 35;
+      return { cost, detail: `エスプレッソ推定(豆${isDouble ? "14g" : "7g"}: ¥${cost})` };
+    }
+    if (name.includes("カフェラテ") || name.includes("カプチーノ")) {
+      const cost = 80; // espresso + milk
+      return { cost, detail: `コーヒー系推定(豆+ミルク: ¥${cost})` };
+    }
+    if (name.includes("抹茶ラテ")) {
+      const cost = 100; // matcha powder + milk
+      return { cost, detail: `抹茶ラテ推定(抹茶+ミルク: ¥${cost})` };
+    }
+    if (name.includes("オーツミルク")) {
+      const cost = 120; // espresso + oat milk (premium)
+      return { cost, detail: `オーツミルク推定(豆+オーツ: ¥${cost})` };
+    }
+    // Specialty soft drinks (nata de coco, floats)
+    if (name.includes("ナタデココ") || name.includes("パッション")) {
+      const cost = Math.round(price * 0.25);
+      return { cost, detail: `スペシャルドリンク推定(原価率25%: ¥${cost})` };
+    }
+    if (name.includes("フロート")) {
+      const cost = Math.round(price * 0.20);
+      return { cost, detail: `フロート推定(原価率20%: ¥${cost})` };
+    }
+    if (name.includes("ピスタチオ")) {
+      const cost = Math.round(price * 0.30);
+      return { cost, detail: `季節ドリンク推定(原価率30%: ¥${cost})` };
+    }
+  }
+
+  // Champagne/wine bottles without supplier data: estimate at 40% cost ratio
+  if ((cat.includes("シャンパン") || cat.includes("スパークリング")) && price >= 10000) {
+    const cost = Math.round(price * 0.40);
+    return { cost, detail: `シャンパン推定(原価率40%: ¥${cost})` };
+  }
+  if ((cat === "赤ワイン ボトル" || cat === "白ワイン ボトル") && price >= 5000) {
+    const cost = Math.round(price * 0.40);
+    return { cost, detail: `ワインボトル推定(原価率40%: ¥${cost})` };
+  }
+
+  // Options / pitcher: estimate at 30%
+  if (cat === "オプション" && price > 0) {
+    const cost = Math.round(price * 0.30);
+    return { cost, detail: `オプション推定(原価率30%: ¥${cost})` };
+  }
+
+  return null;
 }

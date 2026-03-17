@@ -55,7 +55,7 @@ const columns: ColumnDef<SupplierItem>[] = [
     accessorKey: "supplier_code",
     header: ({ column }) => (
       <button
-        className="flex items-center font-medium"
+        className="flex items-center font-semibold text-xs uppercase tracking-wider"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         コード
@@ -72,7 +72,7 @@ const columns: ColumnDef<SupplierItem>[] = [
     accessorKey: "product_name",
     header: ({ column }) => (
       <button
-        className="flex items-center font-medium"
+        className="flex items-center font-semibold text-xs uppercase tracking-wider"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         商品名
@@ -89,7 +89,7 @@ const columns: ColumnDef<SupplierItem>[] = [
     accessorKey: "category_name",
     header: ({ column }) => (
       <button
-        className="flex items-center font-medium"
+        className="flex items-center font-semibold text-xs uppercase tracking-wider"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         カテゴリ
@@ -106,7 +106,9 @@ const columns: ColumnDef<SupplierItem>[] = [
   },
   {
     accessorKey: "spec",
-    header: "規格",
+    header: () => (
+      <span className="font-semibold text-xs uppercase tracking-wider">規格</span>
+    ),
     cell: ({ row }) => (
       <span className="text-sm">{row.getValue("spec")}</span>
     ),
@@ -115,7 +117,7 @@ const columns: ColumnDef<SupplierItem>[] = [
     accessorKey: "case_quantity",
     header: ({ column }) => (
       <button
-        className="flex items-center font-medium"
+        className="flex items-center font-semibold text-xs uppercase tracking-wider"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         入数
@@ -123,7 +125,7 @@ const columns: ColumnDef<SupplierItem>[] = [
       </button>
     ),
     cell: ({ row }) => (
-      <span className="tabular-nums text-center block">
+      <span className="tabular-nums text-center block font-medium">
         {row.getValue("case_quantity")}
       </span>
     ),
@@ -132,7 +134,7 @@ const columns: ColumnDef<SupplierItem>[] = [
     accessorKey: "wholesale_price",
     header: ({ column }) => (
       <button
-        className="flex items-center font-medium"
+        className="flex items-center font-semibold text-xs uppercase tracking-wider"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         納入価格
@@ -140,7 +142,7 @@ const columns: ColumnDef<SupplierItem>[] = [
       </button>
     ),
     cell: ({ row }) => (
-      <span className="tabular-nums">
+      <span className="tabular-nums font-medium">
         {formatYen(row.getValue("wholesale_price"))}
       </span>
     ),
@@ -149,7 +151,7 @@ const columns: ColumnDef<SupplierItem>[] = [
     accessorKey: "unit_price",
     header: ({ column }) => (
       <button
-        className="flex items-center font-medium"
+        className="flex items-center font-semibold text-xs uppercase tracking-wider"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         単価
@@ -182,7 +184,7 @@ const columns: ColumnDef<SupplierItem>[] = [
     accessorKey: "last_shipped",
     header: ({ column }) => (
       <button
-        className="flex items-center font-medium"
+        className="flex items-center font-semibold text-xs uppercase tracking-wider"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         最新出荷日
@@ -192,7 +194,7 @@ const columns: ColumnDef<SupplierItem>[] = [
     cell: ({ row }) => {
       const val = row.getValue<string | null>("last_shipped");
       return (
-        <span className={val ? "text-sm" : "text-sm text-muted-foreground"}>
+        <span className={val ? "text-sm tabular-nums" : "text-sm text-muted-foreground"}>
           {val ?? "\u2014"}
         </span>
       );
@@ -273,17 +275,17 @@ export function SuppliersTable({ items, categories }: SuppliersTableProps) {
               ))}
             </SelectContent>
           </Select>
-          <span className="text-sm text-muted-foreground whitespace-nowrap">
+          <span className="text-sm text-muted-foreground whitespace-nowrap tabular-nums">
             {filteredCount} 件
           </span>
         </div>
       </div>
 
-      <div className="rounded-lg border">
+      <div className="rounded-xl border overflow-x-auto">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="bg-muted/50">
                 {headerGroup.headers.map((header) => (
                   <TableHead key={header.id}>
                     {header.isPlaceholder
@@ -299,8 +301,8 @@ export function SuppliersTable({ items, categories }: SuppliersTableProps) {
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id}>
+              table.getRowModel().rows.map((row, i) => (
+                <TableRow key={row.id} className={i % 2 === 0 ? "bg-muted/20" : ""}>
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
                       {flexRender(
@@ -326,7 +328,7 @@ export function SuppliersTable({ items, categories }: SuppliersTableProps) {
       </div>
 
       <div className="flex items-center justify-between">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted-foreground tabular-nums">
           {filteredCount} 件中 {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}
           {" - "}
           {Math.min(
@@ -337,7 +339,7 @@ export function SuppliersTable({ items, categories }: SuppliersTableProps) {
         </p>
         <div className="flex items-center gap-1">
           <Button
-            variant="outline"
+            variant="ghost"
             size="icon"
             className="size-8"
             onClick={() => table.setPageIndex(0)}
@@ -346,7 +348,7 @@ export function SuppliersTable({ items, categories }: SuppliersTableProps) {
             <ChevronsLeft className="size-4" />
           </Button>
           <Button
-            variant="outline"
+            variant="ghost"
             size="icon"
             className="size-8"
             onClick={() => table.previousPage()}
@@ -354,11 +356,11 @@ export function SuppliersTable({ items, categories }: SuppliersTableProps) {
           >
             <ChevronLeft className="size-4" />
           </Button>
-          <span className="mx-2 text-sm text-muted-foreground">
+          <span className="mx-2 text-sm text-muted-foreground tabular-nums">
             {table.getState().pagination.pageIndex + 1} / {table.getPageCount()}
           </span>
           <Button
-            variant="outline"
+            variant="ghost"
             size="icon"
             className="size-8"
             onClick={() => table.nextPage()}
@@ -367,7 +369,7 @@ export function SuppliersTable({ items, categories }: SuppliersTableProps) {
             <ChevronRight className="size-4" />
           </Button>
           <Button
-            variant="outline"
+            variant="ghost"
             size="icon"
             className="size-8"
             onClick={() => table.setPageIndex(table.getPageCount() - 1)}

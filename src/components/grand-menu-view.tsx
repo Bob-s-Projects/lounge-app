@@ -17,6 +17,10 @@ import {
   Wind,
   Package,
   AlertTriangle,
+  LayoutGrid,
+  CookingPot,
+  GlassWater,
+  Boxes,
 } from "lucide-react"
 
 // ── Types ──
@@ -77,6 +81,20 @@ function SectionIcon({ group }: { group: string }) {
   }
 }
 
+// Category header color strips
+function getCategoryHeaderColor(group: string): string {
+  switch (group) {
+    case "drink":
+      return "bg-gradient-to-r from-indigo-500/10 to-transparent border-l-4 border-l-indigo-500"
+    case "food":
+      return "bg-gradient-to-r from-amber-500/10 to-transparent border-l-4 border-l-amber-500"
+    case "shisha":
+      return "bg-gradient-to-r from-emerald-500/10 to-transparent border-l-4 border-l-emerald-500"
+    default:
+      return "bg-gradient-to-r from-gray-500/10 to-transparent border-l-4 border-l-gray-400"
+  }
+}
+
 // ── Main component ──
 
 export function GrandMenuView({
@@ -93,13 +111,13 @@ export function GrandMenuView({
       key: "drink",
       label: "ドリンクメニュー",
       sections: drinkSections,
-      icon: <Wine className="size-4" />,
+      icon: <GlassWater className="size-4" />,
     },
     {
       key: "food",
       label: "フードメニュー",
       sections: foodSections,
-      icon: <UtensilsCrossed className="size-4" />,
+      icon: <CookingPot className="size-4" />,
     },
     {
       key: "shisha",
@@ -111,7 +129,7 @@ export function GrandMenuView({
       key: "other",
       label: "その他",
       sections: otherSections,
-      icon: <Package className="size-4" />,
+      icon: <Boxes className="size-4" />,
     },
   ]
 
@@ -122,12 +140,15 @@ export function GrandMenuView({
     <div className="space-y-6">
       {/* Summary cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-indigo-50/80 to-white dark:from-indigo-950/20 dark:to-card border-indigo-100 dark:border-indigo-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>提供中メニュー数</CardDescription>
+            <div className="size-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+              <LayoutGrid className="size-4 text-indigo-600 dark:text-indigo-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">
               {summary.activeMenuCount}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -135,34 +156,43 @@ export function GrandMenuView({
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-blue-50/80 to-white dark:from-blue-950/20 dark:to-card border-blue-100 dark:border-blue-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>ドリンク数</CardDescription>
+            <div className="size-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
+              <GlassWater className="size-4 text-blue-600 dark:text-blue-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{summary.drinkCount}</div>
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">{summary.drinkCount}</div>
             <p className="text-xs text-muted-foreground">
               アルコール + ソフトドリンク
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-amber-50/80 to-white dark:from-amber-950/20 dark:to-card border-amber-100 dark:border-amber-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>フード数</CardDescription>
+            <div className="size-8 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+              <CookingPot className="size-4 text-amber-600 dark:text-amber-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{summary.foodCount}</div>
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">{summary.foodCount}</div>
             <p className="text-xs text-muted-foreground">
               フード + かき氷
             </p>
           </CardContent>
         </Card>
-        <Card>
-          <CardHeader className="pb-2">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-emerald-50/80 to-white dark:from-emerald-950/20 dark:to-card border-emerald-100 dark:border-emerald-900/30">
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>平均客単価</CardDescription>
+            <div className="size-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
+              <Wine className="size-4 text-emerald-600 dark:text-emerald-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">
               {formatYen(summary.avgSpendPerTransaction)}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -174,9 +204,9 @@ export function GrandMenuView({
 
       {/* Menu tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="w-full justify-start flex-wrap h-auto gap-1">
+        <TabsList className="w-full justify-start flex-wrap h-auto gap-1 bg-muted/40 p-1.5 rounded-xl">
           {tabGroups.map((g) => (
-            <TabsTrigger key={g.key} value={g.key} className="gap-1.5">
+            <TabsTrigger key={g.key} value={g.key} className="gap-1.5 transition-all data-[state=active]:font-semibold data-[state=active]:shadow-sm">
               {g.icon}
               <span>{g.label}</span>
               <Badge variant="secondary" className="ml-1 text-[10px] px-1.5 h-4">
@@ -208,10 +238,12 @@ export function GrandMenuView({
 
       {/* Dead stock alert */}
       {summary.deadStockCount > 0 && (
-        <Card className="border-amber-200 dark:border-amber-900">
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl border-amber-200 dark:border-amber-900/50 bg-gradient-to-br from-amber-50/40 to-white dark:from-amber-950/10 dark:to-card">
           <CardHeader className="pb-3">
             <div className="flex items-center gap-2">
-              <AlertTriangle className="size-5 text-amber-500" />
+              <div className="size-8 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+                <AlertTriangle className="size-4 text-amber-500" />
+              </div>
               <CardTitle className="text-base">デッドストック警告</CardTitle>
             </div>
             <CardDescription>
@@ -242,8 +274,8 @@ function SectionCard({
   group: string
 }) {
   return (
-    <Card>
-      <CardHeader className="pb-3">
+    <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl overflow-hidden">
+      <CardHeader className={`pb-3 ${getCategoryHeaderColor(group)}`}>
         <div className="flex items-center gap-2">
           <SectionIcon group={group} />
           <CardTitle className="text-base">{section.label}</CardTitle>
@@ -252,7 +284,7 @@ function SectionCard({
           </Badge>
         </div>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pt-4">
         <ScrollArea className="max-h-[500px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
             {section.items.map((item) => (
@@ -269,7 +301,13 @@ function SectionCard({
 
 function MenuItemCard({ item }: { item: MenuProduct }) {
   return (
-    <div className="flex items-center gap-2 rounded-lg border px-3 py-2 text-sm">
+    <div
+      className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm hover:scale-[1.02] transition-all duration-200 cursor-default ${
+        item.has_sales
+          ? "hover:shadow-sm hover:border-indigo-200 dark:hover:border-indigo-800"
+          : "bg-red-50/50 dark:bg-red-950/10 border-red-100 dark:border-red-900/20"
+      }`}
+    >
       <span
         className={`size-2 shrink-0 rounded-full ${
           item.has_sales
@@ -281,7 +319,7 @@ function MenuItemCard({ item }: { item: MenuProduct }) {
       <span className="flex-1 truncate" title={item.product_name}>
         {item.product_name}
       </span>
-      <span className="shrink-0 tabular-nums text-muted-foreground">
+      <span className="shrink-0 tabular-nums font-medium text-muted-foreground">
         {formatYen(item.price)}
       </span>
     </div>

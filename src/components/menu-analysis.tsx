@@ -20,6 +20,15 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import Link from "next/link";
+import {
   ShoppingBag,
   TrendingUp,
   BarChart3,
@@ -27,6 +36,11 @@ import {
   ArrowUpDown,
   Trophy,
   PackageX,
+  Search,
+  Filter,
+  Printer,
+  ClipboardCheck,
+  FileText,
 } from "lucide-react";
 import { formatYen, formatNumber } from "@/lib/format";
 import type {
@@ -129,9 +143,9 @@ function RecommendationBadge({ rec }: { rec: Recommendation }) {
 
 function AbcBadge({ rank }: { rank: "A" | "B" | "C" }) {
   const styles = {
-    A: "bg-emerald-50 text-emerald-700 ring-emerald-600/20 dark:bg-emerald-500/10 dark:text-emerald-400",
-    B: "bg-amber-50 text-amber-700 ring-amber-600/20 dark:bg-amber-500/10 dark:text-amber-400",
-    C: "bg-red-50 text-red-700 ring-red-600/20 dark:bg-red-500/10 dark:text-red-400",
+    A: "bg-emerald-100 text-emerald-700 ring-emerald-600/20 dark:bg-emerald-900/30 dark:text-emerald-300 font-semibold",
+    B: "bg-amber-100 text-amber-700 ring-amber-600/20 dark:bg-amber-900/30 dark:text-amber-300",
+    C: "bg-red-100 text-red-700 ring-red-600/20 dark:bg-red-900/30 dark:text-red-300",
   };
   return (
     <span
@@ -190,7 +204,7 @@ function SortableHead({
 }) {
   const isActive = currentKey === key;
   return (
-    <TableHead className={className}>
+    <TableHead className={`font-semibold text-xs uppercase tracking-wider ${className ?? ""}`}>
       <button
         className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
         onClick={() => onToggle(key)}
@@ -266,10 +280,10 @@ function MenuTable({
   }
 
   return (
-    <div className="rounded-lg border overflow-x-auto">
+    <div className="rounded-xl border overflow-x-auto">
       <Table>
         <TableHeader>
-          <TableRow>
+          <TableRow className="bg-muted/50">
             <SortableHead
               label="商品名"
               sortKey="product_name"
@@ -316,14 +330,15 @@ function MenuTable({
               onToggle={toggleSort}
               className="text-right"
             />
-            <TableHead>ABC</TableHead>
-            <TableHead>判定</TableHead>
-            <TableHead className="min-w-[200px]">理由</TableHead>
+            <TableHead className="text-center font-semibold text-xs uppercase tracking-wider">売上ABC</TableHead>
+            <TableHead className="text-center font-semibold text-xs uppercase tracking-wider">利益ABC</TableHead>
+            <TableHead className="font-semibold text-xs uppercase tracking-wider">判定</TableHead>
+            <TableHead className="min-w-[200px] font-semibold text-xs uppercase tracking-wider">理由</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {sorted.map((item) => (
-            <TableRow key={item.product_id}>
+          {sorted.map((item, i) => (
+            <TableRow key={item.product_id} className={i % 2 === 0 ? "bg-muted/20" : ""}>
               <TableCell className="font-medium max-w-[180px] truncate">
                 {item.product_name}
               </TableCell>
@@ -332,23 +347,23 @@ function MenuTable({
                   {item.category_name}
                 </Badge>
               </TableCell>
-              <TableCell className="text-right tabular-nums">
+              <TableCell className="text-right tabular-nums font-medium">
                 {formatYen(item.total_sales)}
               </TableCell>
-              <TableCell className="text-right tabular-nums">
+              <TableCell className="text-right tabular-nums font-medium">
                 {formatNumber(item.total_quantity)}
               </TableCell>
               <TableCell className="text-right">
                 <CostRatioBadge ratio={item.cost_ratio} />
               </TableCell>
-              <TableCell className="text-right tabular-nums">
+              <TableCell className="text-right tabular-nums font-medium">
                 {formatMonthlyProfit(item.monthly_profit)}
               </TableCell>
-              <TableCell>
-                <div className="flex items-center gap-0.5">
-                  <AbcBadge rank={item.abc_sales} />
-                  <AbcBadge rank={item.abc_profit} />
-                </div>
+              <TableCell className="text-center">
+                <AbcBadge rank={item.abc_sales} />
+              </TableCell>
+              <TableCell className="text-center">
+                <AbcBadge rank={item.abc_profit} />
               </TableCell>
               <TableCell>
                 <RecommendationBadge rec={item.recommendation} />
@@ -372,6 +387,33 @@ interface MenuAnalysisDashboardProps {
 
 export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
   const { items, deadStock, summary, abcMatrix } = data;
+  const [categoryFilter, setCategoryFilter] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Extract unique categories
+  const categories = useMemo(() => {
+    const cats = new Set<string>();
+    for (const item of items) cats.add(item.category_name);
+    for (const item of deadStock) cats.add(item.category_name);
+    return Array.from(cats).sort((a, b) => a.localeCompare(b, "ja"));
+  }, [items, deadStock]);
+
+  // Filtered items
+  const filteredItems = useMemo(() => {
+    return items.filter((item) => {
+      if (categoryFilter !== "all" && item.category_name !== categoryFilter) return false;
+      if (searchQuery && !item.product_name.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+      return true;
+    });
+  }, [items, categoryFilter, searchQuery]);
+
+  const filteredDeadStock = useMemo(() => {
+    return deadStock.filter((item) => {
+      if (categoryFilter !== "all" && item.category_name !== categoryFilter) return false;
+      if (searchQuery && !item.product_name.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+      return true;
+    });
+  }, [deadStock, categoryFilter, searchQuery]);
 
   // Group by recommendation
   const recGroups = useMemo(() => {
@@ -383,47 +425,125 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
       consider_remove: [],
       new_opportunity: [],
     };
-    for (const item of items) {
+    for (const item of filteredItems) {
       groups[item.recommendation].push(item);
     }
     return groups;
-  }, [items]);
+  }, [filteredItems]);
 
   // All items sorted by recommendation priority then sales desc
   const allSorted = useMemo(() => {
-    return [...items].sort((a, b) => {
+    return [...filteredItems].sort((a, b) => {
       const pa = REC_PRIORITY[a.recommendation];
       const pb = REC_PRIORITY[b.recommendation];
       if (pa !== pb) return pa - pb;
       return b.total_sales - a.total_sales;
     });
-  }, [items]);
+  }, [filteredItems]);
 
   // Top 20 by revenue
   const topByRevenue = useMemo(() => {
-    return [...items].sort((a, b) => b.total_sales - a.total_sales).slice(0, 20);
-  }, [items]);
+    return [...filteredItems].sort((a, b) => b.total_sales - a.total_sales).slice(0, 20);
+  }, [filteredItems]);
 
   // Tab count badges
   const tabCounts = {
-    all: items.length,
+    all: filteredItems.length,
     promote: recGroups.promote.length,
     review_price: recGroups.review_price.length,
     reduce_cost: recGroups.reduce_cost.length,
     consider_remove: recGroups.consider_remove.length,
   };
 
+  const isFiltered = categoryFilter !== "all" || searchQuery !== "";
+
   return (
     <div className="space-y-6">
+      {/* Action buttons */}
+      <div className="flex flex-wrap items-center gap-2">
+        <Link
+          href="/menu/report"
+          className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-primary px-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          <Printer className="size-3.5" />
+          提案書を印刷
+        </Link>
+        <Link
+          href="/menu/report/feedback"
+          className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-input bg-background px-3 text-sm font-medium hover:bg-muted transition-colors"
+        >
+          <ClipboardCheck className="size-3.5" />
+          フィードバック入力
+        </Link>
+        <Link
+          href="/menu/draft"
+          className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-input bg-background px-3 text-sm font-medium hover:bg-muted transition-colors"
+        >
+          <FileText className="size-3.5" />
+          メニュー表ドラフト
+        </Link>
+      </div>
+
+      {/* Filters */}
+      <Card className="shadow-sm rounded-xl">
+        <CardContent className="pt-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2">
+              <div className="size-7 rounded-lg bg-muted flex items-center justify-center">
+                <Filter className="size-3.5 text-muted-foreground" />
+              </div>
+              <span className="text-sm font-medium">絞り込み</span>
+            </div>
+            <Select value={categoryFilter} onValueChange={(v) => setCategoryFilter(v ?? "all")}>
+              <SelectTrigger className="w-[200px]">
+                <SelectValue placeholder="カテゴリ" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">すべてのカテゴリ</SelectItem>
+                {categories.map((cat) => (
+                  <SelectItem key={cat} value={cat}>
+                    {cat}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <div className="relative">
+              <Search className="absolute left-2.5 top-2.5 size-4 text-muted-foreground" />
+              <Input
+                placeholder="商品名で検索..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-9 w-[200px]"
+              />
+            </div>
+            {isFiltered && (
+              <button
+                className="text-xs text-muted-foreground hover:text-foreground underline transition-colors"
+                onClick={() => { setCategoryFilter("all"); setSearchQuery(""); }}
+              >
+                フィルタ解除
+              </button>
+            )}
+            {isFiltered && (
+              <Badge variant="secondary">
+                {filteredItems.length + filteredDeadStock.length}件表示中
+              </Badge>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Section 1: Summary Cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-emerald-50/80 to-white dark:from-emerald-950/20 dark:to-card border-emerald-100 dark:border-emerald-900/30">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>販売商品数</CardDescription>
-            <ShoppingBag className="size-4 text-muted-foreground" />
+            <div className="size-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
+              <ShoppingBag className="size-4 text-emerald-600 dark:text-emerald-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">
               {formatNumber(summary.activeProductCount)}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -431,13 +551,15 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
             </p>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-indigo-50/80 to-white dark:from-indigo-950/20 dark:to-card border-indigo-100 dark:border-indigo-900/30">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>総売上</CardDescription>
-            <TrendingUp className="size-4 text-muted-foreground" />
+            <div className="size-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+              <TrendingUp className="size-4 text-indigo-600 dark:text-indigo-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">
               {formatCompact(summary.totalRevenue)}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -445,13 +567,15 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
             </p>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-blue-50/80 to-white dark:from-blue-950/20 dark:to-card border-blue-100 dark:border-blue-900/30">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>月間平均売上</CardDescription>
-            <BarChart3 className="size-4 text-muted-foreground" />
+            <div className="size-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
+              <BarChart3 className="size-4 text-blue-600 dark:text-blue-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums">
               {formatCompact(summary.monthlyAvgRevenue)}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -459,13 +583,15 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
             </p>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl bg-gradient-to-br from-amber-50/80 to-white dark:from-amber-950/20 dark:to-card border-amber-100 dark:border-amber-900/30">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardDescription>改善対象商品</CardDescription>
-            <AlertTriangle className="size-4 text-amber-500" />
+            <div className="size-8 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+              <AlertTriangle className="size-4 text-amber-600 dark:text-amber-400" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-amber-600">
+            <div className="text-2xl md:text-3xl font-bold tabular-nums text-amber-600">
               {formatNumber(summary.improvementCount)}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -476,10 +602,12 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
       </div>
 
       {/* Section 2: ABC Matrix */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <BarChart3 className="size-5" />
+            <div className="size-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+              <BarChart3 className="size-4 text-indigo-600 dark:text-indigo-400" />
+            </div>
             ABC分析マトリクス（売上 x 利益）
           </CardTitle>
           <CardDescription>
@@ -491,16 +619,16 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
             <table className="w-full max-w-lg border-collapse text-sm">
               <thead>
                 <tr>
-                  <th className="border p-2 bg-muted text-left"></th>
-                  <th className="border p-2 bg-muted text-center font-medium">売上A</th>
-                  <th className="border p-2 bg-muted text-center font-medium">売上B</th>
-                  <th className="border p-2 bg-muted text-center font-medium">売上C</th>
+                  <th className="border p-2 bg-muted/60 text-left font-semibold text-xs uppercase tracking-wider"></th>
+                  <th className="border p-2 bg-muted/60 text-center font-semibold text-xs uppercase tracking-wider">売上A</th>
+                  <th className="border p-2 bg-muted/60 text-center font-semibold text-xs uppercase tracking-wider">売上B</th>
+                  <th className="border p-2 bg-muted/60 text-center font-semibold text-xs uppercase tracking-wider">売上C</th>
                 </tr>
               </thead>
               <tbody>
                 {(["A", "B", "C"] as const).map((profitRank) => (
                   <tr key={profitRank}>
-                    <td className="border p-2 bg-muted font-medium">利益{profitRank}</td>
+                    <td className="border p-2 bg-muted/60 font-semibold text-xs uppercase tracking-wider">利益{profitRank}</td>
                     {(["A", "B", "C"] as const).map((salesRank) => {
                       const count = abcMatrix[profitRank][salesRank];
                       // Cell styling based on position
@@ -531,10 +659,10 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
                       return (
                         <td
                           key={salesRank}
-                          className={`border p-3 text-center ${cellStyle}`}
+                          className={`border p-3 text-center rounded-sm ${cellStyle}`}
                         >
                           <div className="text-xs font-medium">{cellLabel}</div>
-                          <div className="text-lg font-bold">{count}</div>
+                          <div className="text-lg font-bold tabular-nums">{count}</div>
                         </td>
                       );
                     })}
@@ -547,10 +675,12 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
       </Card>
 
       {/* Section 3: Advice Tabs */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <AlertTriangle className="size-5" />
+            <div className="size-8 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center">
+              <AlertTriangle className="size-4 text-amber-600 dark:text-amber-400" />
+            </div>
             メニュー改廃アドバイス
           </CardTitle>
           <CardDescription>
@@ -559,32 +689,32 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
         </CardHeader>
         <CardContent>
           <Tabs defaultValue={0}>
-            <TabsList className="flex-wrap">
-              <TabsTrigger value={0}>
+            <TabsList className="flex-wrap bg-muted/40 p-1 rounded-lg">
+              <TabsTrigger value={0} className="transition-all data-[state=active]:font-semibold data-[state=active]:shadow-sm">
                 全体
                 <Badge variant="secondary" className="ml-1 text-[10px] px-1.5 py-0">
                   {tabCounts.all}
                 </Badge>
               </TabsTrigger>
-              <TabsTrigger value={1}>
+              <TabsTrigger value={1} className="transition-all data-[state=active]:font-semibold data-[state=active]:shadow-sm">
                 強化推奨
                 <Badge variant="secondary" className="ml-1 text-[10px] px-1.5 py-0 bg-blue-50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400">
                   {tabCounts.promote}
                 </Badge>
               </TabsTrigger>
-              <TabsTrigger value={2}>
+              <TabsTrigger value={2} className="transition-all data-[state=active]:font-semibold data-[state=active]:shadow-sm">
                 価格見直し
                 <Badge variant="secondary" className="ml-1 text-[10px] px-1.5 py-0 bg-amber-50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400">
                   {tabCounts.review_price}
                 </Badge>
               </TabsTrigger>
-              <TabsTrigger value={3}>
+              <TabsTrigger value={3} className="transition-all data-[state=active]:font-semibold data-[state=active]:shadow-sm">
                 原価改善
                 <Badge variant="secondary" className="ml-1 text-[10px] px-1.5 py-0 bg-orange-50 text-orange-700 dark:bg-orange-500/10 dark:text-orange-400">
                   {tabCounts.reduce_cost}
                 </Badge>
               </TabsTrigger>
-              <TabsTrigger value={4}>
+              <TabsTrigger value={4} className="transition-all data-[state=active]:font-semibold data-[state=active]:shadow-sm">
                 廃止検討
                 <Badge variant="secondary" className="ml-1 text-[10px] px-1.5 py-0 bg-red-50 text-red-700 dark:bg-red-500/10 dark:text-red-400">
                   {tabCounts.consider_remove}
@@ -612,10 +742,12 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
       </Card>
 
       {/* Section 4: Top 20 by revenue */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Trophy className="size-5" />
+            <div className="size-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+              <Trophy className="size-4 text-indigo-600 dark:text-indigo-400" />
+            </div>
             売れ筋ランキング TOP20
           </CardTitle>
           <CardDescription>
@@ -623,24 +755,25 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="rounded-lg border overflow-x-auto">
+          <div className="rounded-xl border overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow>
-                  <TableHead className="w-12">#</TableHead>
-                  <TableHead>商品名</TableHead>
-                  <TableHead>カテゴリ</TableHead>
-                  <TableHead className="text-right">数量</TableHead>
-                  <TableHead className="text-right">売上</TableHead>
-                  <TableHead className="text-right">推定原価率</TableHead>
-                  <TableHead>ABC</TableHead>
-                  <TableHead>判定</TableHead>
+                <TableRow className="bg-muted/50">
+                  <TableHead className="w-12 font-semibold text-xs uppercase tracking-wider">#</TableHead>
+                  <TableHead className="font-semibold text-xs uppercase tracking-wider">商品名</TableHead>
+                  <TableHead className="font-semibold text-xs uppercase tracking-wider">カテゴリ</TableHead>
+                  <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">数量</TableHead>
+                  <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">売上</TableHead>
+                  <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">推定原価率</TableHead>
+                  <TableHead className="text-center font-semibold text-xs uppercase tracking-wider">売上ABC</TableHead>
+                  <TableHead className="text-center font-semibold text-xs uppercase tracking-wider">利益ABC</TableHead>
+                  <TableHead className="font-semibold text-xs uppercase tracking-wider">判定</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {topByRevenue.map((item, i) => (
-                  <TableRow key={item.product_id}>
-                    <TableCell className="font-mono text-xs text-muted-foreground font-bold">
+                  <TableRow key={item.product_id} className={i % 2 === 0 ? "bg-muted/20" : ""}>
+                    <TableCell className="font-mono text-xs text-muted-foreground font-bold tabular-nums">
                       {i + 1}
                     </TableCell>
                     <TableCell className="font-medium max-w-[180px] truncate">
@@ -651,7 +784,7 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
                         {item.category_name}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-right tabular-nums">
+                    <TableCell className="text-right tabular-nums font-medium">
                       {formatNumber(item.total_quantity)}
                     </TableCell>
                     <TableCell className="text-right tabular-nums font-medium">
@@ -660,11 +793,11 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
                     <TableCell className="text-right">
                       <CostRatioBadge ratio={item.cost_ratio} />
                     </TableCell>
-                    <TableCell>
-                      <div className="flex items-center gap-0.5">
-                        <AbcBadge rank={item.abc_sales} />
-                        <AbcBadge rank={item.abc_profit} />
-                      </div>
+                    <TableCell className="text-center">
+                      <AbcBadge rank={item.abc_sales} />
+                    </TableCell>
+                    <TableCell className="text-center">
+                      <AbcBadge rank={item.abc_profit} />
                     </TableCell>
                     <TableCell>
                       <RecommendationBadge rec={item.recommendation} />
@@ -678,10 +811,12 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
       </Card>
 
       {/* Section 5: Dead stock */}
-      <Card>
+      <Card className="shadow-sm hover:shadow-md transition-all duration-200 rounded-xl border-red-100 dark:border-red-900/30 bg-gradient-to-br from-red-50/30 to-white dark:from-red-950/10 dark:to-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <PackageX className="size-5 text-red-500" />
+            <div className="size-8 rounded-lg bg-red-100 dark:bg-red-900/40 flex items-center justify-center">
+              <PackageX className="size-4 text-red-500" />
+            </div>
             販売ゼロ商品（過去90日間）
           </CardTitle>
           <CardDescription>
@@ -695,18 +830,18 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
             </div>
           ) : (
             <ScrollArea className="h-[400px]">
-              <div className="rounded-lg border overflow-x-auto">
+              <div className="rounded-xl border overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow>
-                      <TableHead>商品名</TableHead>
-                      <TableHead>カテゴリ</TableHead>
-                      <TableHead className="text-right">設定価格</TableHead>
+                    <TableRow className="bg-muted/50">
+                      <TableHead className="font-semibold text-xs uppercase tracking-wider">商品名</TableHead>
+                      <TableHead className="font-semibold text-xs uppercase tracking-wider">カテゴリ</TableHead>
+                      <TableHead className="text-right font-semibold text-xs uppercase tracking-wider">設定価格</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {deadStock.map((item) => (
-                      <TableRow key={item.product_id}>
+                    {deadStock.map((item, i) => (
+                      <TableRow key={item.product_id} className={i % 2 === 0 ? "bg-muted/20" : ""}>
                         <TableCell className="font-medium">
                           {item.product_name}
                         </TableCell>
@@ -715,7 +850,7 @@ export function MenuAnalysisDashboard({ data }: MenuAnalysisDashboardProps) {
                             {item.category_name}
                           </Badge>
                         </TableCell>
-                        <TableCell className="text-right tabular-nums">
+                        <TableCell className="text-right tabular-nums font-medium">
                           {formatYen(item.selling_price)}
                         </TableCell>
                       </TableRow>

@@ -1,44 +1,36 @@
-import { Package } from "lucide-react";
-import productsData from "@/data/products.json";
-import supplierData from "@/data/supplier_prices.json";
-import type { ProductsData, SupplierData } from "@/lib/types";
-import { matchCosts } from "@/lib/cost-matching";
-import { ProductsTable } from "@/components/products-table";
+import { Package } from "lucide-react"
+import { BreadcrumbNav } from "@/components/breadcrumb-nav"
+import { ProductsTable } from "@/components/products-table"
+import { getProducts, getCategories } from "./actions"
 
 export const metadata = {
-  title: "商品一覧 | 原価管理",
-};
+  title: "商品マスタ | 原価管理",
+}
 
-export default function ProductsPage() {
-  const data = productsData as ProductsData;
-  const products = data.products;
-  const supplier = supplierData as SupplierData;
+export default async function ProductsPage() {
+  const [products, categories] = await Promise.all([
+    getProducts(),
+    getCategories(),
+  ])
 
-  const categories = Array.from(
-    new Set(products.map((p) => p.category_name))
-  ).sort();
-
-  const costMatches = matchCosts(products, supplier);
-
-  // Summary stats
-  const matched = costMatches.filter((m) => m.match_type !== "unmatched");
-  const directCount = costMatches.filter((m) => m.match_type === "direct").length;
-  const recipeCount = costMatches.filter((m) => m.match_type === "recipe").length;
+  const activeCount = products.filter((p) => p.is_active).length
 
   return (
     <div className="space-y-6">
-      <div>
-        <div className="flex items-center gap-2">
+      <BreadcrumbNav />
+      <div className="flex items-center gap-3">
+        <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
           <Package className="size-5 text-primary" />
-          <h1 className="text-2xl font-bold tracking-tight">商品一覧</h1>
         </div>
-        <p className="mt-1 text-sm text-muted-foreground">
-          POS登録商品 {data.total_count.toLocaleString()} 件（最終更新: {new Date(data.updated_at).toLocaleDateString("ja-JP")}）
-          ／原価マッチ済: {matched.length}件（直接: {directCount}件、レシピ: {recipeCount}件）
-        </p>
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">商品マスタ</h1>
+          <p className="mt-0.5 text-sm text-muted-foreground">
+            全 {products.length.toLocaleString()} 件（有効: {activeCount.toLocaleString()} 件）
+          </p>
+        </div>
       </div>
 
-      <ProductsTable products={products} categories={categories} costMatches={costMatches} />
+      <ProductsTable products={products} categories={categories} />
     </div>
-  );
+  )
 }

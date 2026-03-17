@@ -1,4 +1,6 @@
+import { BookOpen } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { BreadcrumbNav } from "@/components/breadcrumb-nav"
 import { getProducts, getSalesSummary } from "@/lib/data"
 import { GrandMenuView } from "@/components/grand-menu-view"
 
@@ -200,13 +202,17 @@ export default function GrandMenuPage() {
 
   return (
     <div className="flex flex-col gap-6 p-4 md:p-6">
-      <div className="flex items-center gap-2">
+      <BreadcrumbNav />
+      <div className="flex items-center gap-3">
         <SidebarTrigger className="md:hidden" />
+        <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+          <BookOpen className="size-5 text-primary" />
+        </div>
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">
             グランドメニュー
           </h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="mt-0.5 text-sm text-muted-foreground">
             現在提供中のメニュー構成
           </p>
         </div>

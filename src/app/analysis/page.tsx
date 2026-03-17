@@ -1,4 +1,5 @@
-import { BarChart3 } from "lucide-react";
+import { TrendingUp } from "lucide-react";
+import { BreadcrumbNav } from "@/components/breadcrumb-nav";
 import productsData from "@/data/products.json";
 import supplierData from "@/data/supplier_prices.json";
 import type { ProductsData, SupplierData } from "@/lib/types";
@@ -76,14 +77,17 @@ export default function AnalysisPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <div className="flex items-center gap-2">
-          <BarChart3 className="size-5 text-primary" />
-          <h1 className="text-2xl font-bold tracking-tight">原価分析</h1>
+      <BreadcrumbNav />
+      <div className="flex items-center gap-3">
+        <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+          <TrendingUp className="size-5 text-primary" />
         </div>
-        <p className="mt-1 text-sm text-muted-foreground">
-          仕入れデータに基づく推定原価率の分析。マッチ済み商品 {matchedItems.length} 件を対象。
-        </p>
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">原価分析</h1>
+          <p className="mt-0.5 text-sm text-muted-foreground">
+            仕入れデータに基づく推定原価率の分析。マッチ済み商品 {matchedItems.length} 件を対象。
+          </p>
+        </div>
       </div>
 
       <AnalysisDashboard

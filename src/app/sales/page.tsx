@@ -1,4 +1,6 @@
+import { BarChart3 } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { BreadcrumbNav } from "@/components/breadcrumb-nav"
 import { getSalesSummary } from "@/lib/data"
 import { SalesDashboard } from "@/components/sales-dashboard"
 
@@ -17,11 +19,15 @@ export default function SalesPage() {
 
   return (
     <div className="flex flex-col gap-6 p-4 md:p-6">
-      <div className="flex items-center gap-2">
+      <BreadcrumbNav />
+      <div className="flex items-center gap-3">
         <SidebarTrigger className="md:hidden" />
+        <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
+          <BarChart3 className="size-5 text-primary" />
+        </div>
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">売上分析</h1>
-          <p className="text-sm text-muted-foreground">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">売上分析</h1>
+          <p className="mt-0.5 text-sm text-muted-foreground">
             {sales.period.from} 〜 {sales.period.to}（90日間）
           </p>
         </div>
